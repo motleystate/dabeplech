@@ -6,7 +6,8 @@ setup(name="bioapi",
       author='Kenzo-Hugo Hillion',
       author_email='kehillio@pasteur.fr',
       install_requires=[
-          'requests'
+          'requests',
+          'colored'
       ],
       packages=find_packages()
 )
