@@ -3,17 +3,6 @@ from urllib.parse import urljoin
 
 import requests
 
-_LOGGER = logging.getLogger(__name__)
-
-
-class LoggedSession(requests.Session):
-
-    def request(self, method, url, **kwargs):
-        _LOGGER.info(f"{method.upper()} {url}")
-        response = super().request(method, url, **kwargs)
-        _LOGGER.info(f"STATUS CODE: {response.status_code}")
-        return response
-
 
 class BaseAPI(object):
     BASE_URL = ''
@@ -22,7 +11,7 @@ class BaseAPI(object):
         'Content-type': 'application/json',
         'Accept': '*/*'
     }
-    SESSION = LoggedSession
+    SESSION = requests.Session
 
     def __init__(self):
         if not getattr(self, 'base_url', None):
