@@ -39,9 +39,9 @@ class BaseAPI(object):
 
     def put(self, data, entry_id=None):
         if entry_id:
-            full_url = urljoin(self.url, entry_id)
+            full_url = urljoin(self.url, entry_id + '/')
         else:
             full_url = self.url
-        response = self.session.put(f"{full_url}/", json=data)
+        response = self.session.put(f"{full_url}", json=data)
         response.raise_for_status()
         return response.json()
