@@ -1,5 +1,7 @@
 from urllib.parse import urljoin
 
+from requests.exceptions import HTTPError
+
 from .base import BaseAPI
 
 
@@ -50,7 +52,10 @@ class TogoWSEntryAPI(TogoWSAPI):
         self.url = urljoin(self.BASE_URL, self.route)
 
     def get(self, entry_id):
-        return super().get(f"{entry_id}.{self.format}")
+        content = super().get(f"{entry_id}.{self.format}")
+        if not content:
+            raise HTTPError("%s not found in %s", entry_id, self.url)
+        return content
 
     def get_field(self, entry_id, field):
         return super().get(f"{entry_id}/{field}.{self.format}")
