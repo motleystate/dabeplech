@@ -23,3 +23,11 @@ class MetageneDBCatalogTaxonomyAPI(MetageneDBAPI):
 
 class MetageneDBCatalogFunctionAPI(MetageneDBAPI):
     ROUTE = 'api/catalog/v1/functions/'
+
+
+class MetageneDBCatalogKeggOrthologyAPI(MetageneDBAPI):
+    ROUTE = 'api/catalog/v1/kegg-orthologies/'
+
+
+class MetageneDBCatalogEggNogAPI(MetageneDBAPI):
+    ROUTE = 'api/catalog/v1/eggnogs/'
