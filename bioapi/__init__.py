@@ -1,6 +1,6 @@
 from .togows import TogoWSEntryAPI  # noqa
 from .metagenedb import (  # noqa
-    MetageneDBCatalogEggNogAPI,
+    MetageneDBCatalogEggNOGAPI,
     MetageneDBCatalogGeneAPI,
     MetageneDBCatalogKeggOrthologyAPI,
     MetageneDBCatalogTaxonomyAPI,
