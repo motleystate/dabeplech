@@ -26,9 +26,9 @@ class BaseAPI(object):
         response.raise_for_status()
         return response.json()
 
-    def get(self, entry_id):
+    def get(self, entry_id, params=None):
         full_url = urljoin(self.url, entry_id)
-        response = self.session.get(full_url)
+        response = self.session.get(full_url, params=params)
         response.raise_for_status()
         return response.json()
 

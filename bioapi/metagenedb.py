@@ -29,5 +29,5 @@ class MetageneDBCatalogKeggOrthologyAPI(MetageneDBAPI):
     ROUTE = 'api/catalog/v1/kegg-orthologies/'
 
 
-class MetageneDBCatalogEggNogAPI(MetageneDBAPI):
+class MetageneDBCatalogEggNOGAPI(MetageneDBAPI):
     ROUTE = 'api/catalog/v1/eggnogs/'
