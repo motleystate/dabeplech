@@ -55,7 +55,7 @@ class TogoWSEntryAPI(TogoWSAPI):
         content = super().get(f"{entry_id}.{self.format}")
         if not content:
             raise HTTPError(f"ID: <{entry_id}> not found in {self.url}")
-        return content
+        return content[0]
 
     def get_field(self, entry_id, field):
         return super().get(f"{entry_id}/{field}.{self.format}")

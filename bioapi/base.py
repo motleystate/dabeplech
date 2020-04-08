@@ -18,22 +18,26 @@ class BaseAPI(object):
         if not getattr(self, 'route', None):
             self.route = self.ROUTE
         self.url = urljoin(self.base_url, self.route)
+        self.last_url_requested = None
         self.session = self.SESSION()
         self.session.headers.update(self.HEADERS)
 
     def get_all(self, params=None):
         response = self.session.get(self.url, params=params)
+        self.last_url_requested = self.url
         response.raise_for_status()
         return response.json()
 
     def get(self, entry_id, params=None):
         full_url = urljoin(self.url, entry_id)
         response = self.session.get(full_url, params=params)
+        self.last_url_requested = full_url
         response.raise_for_status()
         return response.json()
 
     def post(self, data):
         response = self.session.post(f"{self.url}", json=data)
+        self.last_url_requested = self.url
         response.raise_for_status()
         return response.json()
 
@@ -43,5 +47,6 @@ class BaseAPI(object):
         else:
             full_url = self.url
         response = self.session.put(f"{full_url}", json=data)
+        self.last_url_requested = full_url
         response.raise_for_status()
         return response.json()
