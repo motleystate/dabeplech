@@ -13,6 +13,10 @@ class MetageneDBAPI(BaseAPI):
             })
 
 
+class MetageneDBCatalogTokenAPI(MetageneDBAPI):
+    ROUTE = 'api/auth/obtain_token/'
+
+
 class MetageneDBCatalogGeneAPI(MetageneDBAPI):
     ROUTE = 'api/catalog/v1/genes/'
 
@@ -31,3 +35,7 @@ class MetageneDBCatalogKeggOrthologyAPI(MetageneDBAPI):
 
 class MetageneDBCatalogEggNOGAPI(MetageneDBAPI):
     ROUTE = 'api/catalog/v1/eggnogs/'
+
+
+class MetageneDBCatalogStatisticsAPI(MetageneDBAPI):
+    ROUTE = 'api/catalog/v1/statistics/'

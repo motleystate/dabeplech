@@ -6,8 +6,9 @@ setup(name="bioapi",
       author='Kenzo-Hugo Hillion',
       author_email='kehillio@pasteur.fr',
       install_requires=[
-          'requests',
-          'colored'
+          'pydantic==1.5.1',
+          'requests==2.23.0',
+          'colored==1.4.2'
       ],
       packages=find_packages()
 )
