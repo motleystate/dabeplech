@@ -1,6 +1,6 @@
 from typing import List
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, constr
 
 from bioapi.models.kegg.dblinks import DBLinksModel
 from bioapi.models.kegg.references import KeggReferenceModel
@@ -21,6 +21,7 @@ class KeggOrthologyModel(KeggModel):
     entry_id: str = Field(regex="^K\d{5}$")
     names: List[str] = None
     definition: str = None
+    ec_numbers: List[constr(regex="^[0-9]\.[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,2}$")] = None
     diseases: dict = None
 
 
