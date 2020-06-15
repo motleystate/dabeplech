@@ -1,6 +1,9 @@
 # Bioapi
 
 ![Python package](https://github.com/khillion/bioapi/workflows/Python%20package/badge.svg)
+[![codecov](https://codecov.io/gh/khillion/bioapi/branch/master/graph/badge.svg)](https://codecov.io/gh/khillion/bioapi)
+
+
 
 Light library to perform request to different bioinformatics APIs.
 
