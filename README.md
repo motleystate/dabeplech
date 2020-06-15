@@ -1,5 +1,7 @@
 # Bioapi
 
+![Python package](https://github.com/khillion/bioapi/workflows/Python%20package/badge.svg)
+
 Light library to perform request to different bioinformatics APIs.
 
 ## Install
