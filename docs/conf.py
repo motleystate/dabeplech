@@ -22,6 +22,9 @@ sys.path.insert(0, os.path.abspath('../../bioapi'))
 
 # -- Project information -----------------------------------------------------
 
+# The master toctree document.
+master_doc = 'index'
+
 project = 'bioapi'
 copyright = '2020, Kenzo-Hugo Hillion'
 author = 'Kenzo-Hugo Hillion'
@@ -48,7 +51,6 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
 
 # -- Options for HTML output -------------------------------------------------
 
