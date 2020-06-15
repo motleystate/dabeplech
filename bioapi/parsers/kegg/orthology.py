@@ -8,26 +8,32 @@ logger = logging.getLogger()
 
 
 class KeggOrthologyParser:
+    """
+    Parser for KEGG KO `plain text` result from KEGG API.
+    """
 
-    def __init__(self, text_response):
+    def __init__(self, text_response: str):
+        """
+        :param text_response: Full plain text response from KEGG API
+        """
         self.lines = text_response.rstrip().split('\n')
         self.handler = '_handle_entry'
         self.current_ref = None
         self.skipped_lines = 0
 
-    def _handle_default(self, line, **kwargs):
+    def _handle_default(self, line: str, **kwargs):
         # logging.warning("not implemented yet")
         self.skipped_lines += 1
 
-    def _handle_entry(self, line, **kwargs):
+    def _handle_entry(self, line: str, **kwargs):
         entry_id = line.split()[1]
         # Starts a Kegg Orthology object with name that will be updated
         self.entry = KeggOrthologyModel(entry_id=entry_id, name=entry_id)
 
-    def _handle_name(self, line, **kwargs):
+    def _handle_name(self, line: str, **kwargs):
         self.entry.name = line.split()[1]
 
-    def _handle_definition(self, line, **kwargs):
+    def _handle_definition(self, line: str, **kwargs):
         def_and_ec_numbers = line.split(maxsplit=1)[-1]
         if 'EC' in def_and_ec_numbers:
             elements = def_and_ec_numbers.split('[')
@@ -36,7 +42,7 @@ class KeggOrthologyParser:
         else:
             self.entry.definition = def_and_ec_numbers
 
-    def _simple_handling(self, line, attr_to_set, first=False):
+    def _simple_handling(self, line: str, attr_to_set: str, first: bool = False):
         if first:
             elements = line.split(maxsplit=2)
             setattr(self.entry, attr_to_set, {elements[1]: elements[2]})
@@ -98,6 +104,9 @@ class KeggOrthologyParser:
             self.entry.references.append(self.current_ref.dict())
 
     def parse(self):
+        """
+        Perform parsing of the text content into the model defined for KEGG orthology.
+        """
         for line in self.lines:
             if not line.startswith(' '):  # There is a category to be handled
                 category = line.split()[0].lower()
@@ -109,5 +118,9 @@ class KeggOrthologyParser:
 
     @property
     def validated_entry(self):
+        """
+        :return: Validated entry for KEGG orthology.
+        :rtype: dict
+        """
         # Reparse all the content of entry to make sure it respects the expected structure
         return KeggOrthologyModel(**self.entry.dict())

@@ -17,7 +17,11 @@ class KeggReferenceParser:
         return self._pubmed_id
 
     @pubmed_id.setter
-    def pubmed_id(self, line):
+    def pubmed_id(self, line: str):
+        """
+        :param line: corresponding line
+        :type line: STR
+        """
         self._pubmed_id = line.split()[1].split('PMID:')[-1].strip()
 
     @property

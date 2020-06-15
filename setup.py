@@ -1,8 +1,10 @@
 from setuptools import setup, find_packages
 
+exec(open('bioapi/version.py').read())
+
 setup(
     name="bioapi",
-    version="0.0.1",
+    version=__version__,
     description='Light library to perform request to different bioinformatics APIs',
     author='Kenzo-Hugo Hillion',
     author_email='kehillio@pasteur.fr',

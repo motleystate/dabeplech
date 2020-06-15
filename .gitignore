@@ -1,3 +1,4 @@
+.DS_Store
 *.egg-info/
 __pycache__/
 .vscode/
@@ -5,3 +6,8 @@ __pycache__/
 .coverage
 
 notebooks/
+
+# Sphinx documentation
+_build/
+_static/
+_tempates/

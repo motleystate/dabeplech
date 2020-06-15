@@ -8,25 +8,28 @@ logging.basicConfig()
 logger = logging.getLogger()
 
 
-ALLOWED_DATABASES = [
-    'pathway', 'brite', 'module', 'ko', 'genome', 'organism', 'vg', 'ag', 'compound',
-    'glycan', 'reaction', 'rclass', 'enzyme', 'network', 'variant', 'disease',
-    'drug', 'dgroup', 'environ'
-]
-
-
 class KEGGAPI(BaseAPI):
-    BASE_URL = 'http://rest.kegg.jp'
-    LIST_PARSER = {}
-    GET_PARSER = {
+    ALLOWED_DATABASES: list = [
+        'pathway', 'brite', 'module', 'ko', 'genome', 'organism', 'vg', 'ag', 'compound',
+        'glycan', 'reaction', 'rclass', 'enzyme', 'network', 'variant', 'disease',
+        'drug', 'dgroup', 'environ'
+    ]
+    BASE_URL: str = 'http://rest.kegg.jp'
+    LIST_PARSER: dict = {}
+    GET_PARSER: dict = {
         'ko': KeggOrthologyParser
     }
 
-    def get_all(self, database, params=None):
-        if database not in ALLOWED_DATABASES:
-            raise Exception(f"<{database}> not a valid database for KEGG. Must choose among {ALLOWED_DATABASES}")
+    def get_all(self, database: str):
+        """
+        :param database: selected database you want to retrieve all content from (list in self.ALLOWED_DATABASES)
+        :return: response from KEGG API for the database
+        :rtype: *dict* **IF** parser available **ELSE** *str*
+        """
+        if database not in self.ALLOWED_DATABASES:
+            raise Exception(f"<{database}> not a valid database for KEGG. Must choose among {self.ALLOWED_DATABASES}")
         full_url = urljoin(self.url, f"list/{database}")
-        response = self.session.get(full_url, params=params)
+        response = self.session.get(full_url)
         self.last_url_requested = full_url
         response.raise_for_status()
         if self.LIST_PARSER.get(database, None) is not None:
@@ -35,9 +38,14 @@ class KEGGAPI(BaseAPI):
             logger.warning("Parser not defined yet for %s, returning plain text", database)
         return response.text
 
-    def get(self, entry_id, params=None):
+    def get(self, entry_id: str):
+        """
+        :param entry_id: KEGG ID to retrieve.
+        :return: response from KEGG API for the given entry_id
+        :rtype: *dict* **IF** parser available **ELSE** *str*
+        """
         full_url = urljoin(self.url, f"get/{entry_id}")
-        response = self.session.get(full_url, params=params)
+        response = self.session.get(full_url)
         self.last_url_requested = full_url
         response.raise_for_status()
         database = response.text.splitlines()[0].split()[-1].lower()
