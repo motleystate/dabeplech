@@ -1,9 +1,13 @@
+import logging
 from urllib.parse import urljoin
 
 from requests.exceptions import HTTPError
 
 from bioapi.base import BaseAPI
 from bioapi.parsers.kegg import KeggOrthologyParser
+
+logging.basicConfig()
+logger = logging.getLogger()
 
 
 ALLOWED_DATABASES = [
@@ -29,6 +33,8 @@ class KEGGAPI(BaseAPI):
         response.raise_for_status()
         if self.LIST_PARSER.get(database, None) is not None:
             return self.LIST_PARSER.get(database)(response.text)
+        else:
+            logger.warning("Parser not defined yet for %s, returning plain text", database)
         return response.text
 
     def get(self, entry_id, params=None):
@@ -41,4 +47,6 @@ class KEGGAPI(BaseAPI):
             parser = self.GET_PARSER.get(database)(response.text)
             parser.parse()
             return parser.validated_entry.dict()
+        else:
+            logger.warning("Parser not defined yet for %s, returning plain text", database)
         return response.text
