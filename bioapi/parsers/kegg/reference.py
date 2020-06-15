@@ -18,7 +18,7 @@ class KeggReferenceParser:
 
     @pubmed_id.setter
     def pubmed_id(self, line):
-        self._pubmed_id = line.split('PMID:')[-1].strip()
+        self._pubmed_id = line.split()[1].split('PMID:')[-1].strip()
 
     @property
     def authors(self):

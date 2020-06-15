@@ -2,10 +2,10 @@ from urllib.parse import urljoin
 
 from requests.exceptions import HTTPError
 
-from .base import BaseAPI
+from .base import BaseAPI, GETMixin
 
 
-class TogoWSAPI(BaseAPI):
+class TogoWSAPI(BaseAPI, GETMixin):
     BASE_URL = 'http://togows.org'
 
 

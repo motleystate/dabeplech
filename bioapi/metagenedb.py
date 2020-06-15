@@ -1,7 +1,9 @@
-from .base import BaseAPI
+from .base import (
+    BaseAPI, LISTMixin, GETMixin, POSTMixin, PUTMixin
+)
 
 
-class MetageneDBAPI(BaseAPI):
+class MetageneDBAPI(BaseAPI, LISTMixin, GETMixin, POSTMixin, PUTMixin):
     BASE_URL = 'http://localhost/'
 
     def __init__(self, base_url=BASE_URL, jwt_token=None):
