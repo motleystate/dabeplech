@@ -1,6 +1,6 @@
 from typing import List
 
-from pydantic import AnyUrl, BaseModel
+from pydantic import BaseModel
 
 
 class KeggReferenceModel(BaseModel):

@@ -15,9 +15,9 @@ def _expected_not_working_togowsentry():
         print(f"Test getting {entry_id} from {db} database from {TogoWSEntryAPI.BASE_URL}:")
         try:
             api = TogoWSEntryAPI(db)
-            content = api.get(entry_id)
+            content = api.get(entry_id)  # noqa
             print(_format_print("Status", "OK", "red"))
-        except:
+        except Exception:
             print(_format_print("Status", "ERROR", "green"))
         finally:
             print(f" --> Requested URL: {api.last_url_requested}")
@@ -34,13 +34,13 @@ def _expected_working_togowsentry():
         print(f"Test getting {entry_id} from {db} database from {TogoWSEntryAPI.BASE_URL}:")
         try:
             api = TogoWSEntryAPI(db)
-            content = api.get(entry_id)
+            content = api.get(entry_id)  # noqa
             print(_format_print("Status", "OK", "green"))
             if content:
                 print(_format_print("Content", "NOT EMPTY", "green"))
             else:
                 print(_format_print("Content", "EMPTY", "red"))
-        except:
+        except Exception:
             print(_format_print("Status", "ERROR", "red"))
         finally:
             print(f" --> Requested URL: {api.last_url_requested}")

@@ -1,8 +1,6 @@
 import logging
 from urllib.parse import urljoin
 
-from requests.exceptions import HTTPError
-
 from bioapi.base import BaseAPI
 from bioapi.parsers.kegg import KeggOrthologyParser
 

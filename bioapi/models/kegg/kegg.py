@@ -18,15 +18,15 @@ class KeggModel(BaseModel):
 
 
 class KeggOrthologyModel(KeggModel):
-    entry_id: str = Field(regex="^K\d{5}$")
+    entry_id: str = Field(regex=r"^K\d{5}$")
     names: List[str] = None
     definition: str = None
-    ec_numbers: List[constr(regex="^[0-9]\.[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,2}$")] = None
+    ec_numbers: List[constr(regex=r'^[0-9]\.[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,2}$')] = None  # noqa
     diseases: dict = None
 
 
 class KeggPathwayModel(KeggModel):
-    entry_id: str = Field(regex='^(map|ko)\d{5}$')
+    entry_id: str = Field(regex=r'^(map|ko)\d{5}$')
     description: str
     diseases: dict = None
     orthologs: dict = None
@@ -35,4 +35,4 @@ class KeggPathwayModel(KeggModel):
     reactions: dict = None
     compounds: dict = None
     rel_pathways: dict = None
-    ko_pathway: str = Field(None, regex='^ko\d{5}$')
+    ko_pathway: str = Field(None, regex=r'^ko\d{5}$')
