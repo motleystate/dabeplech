@@ -23,3 +23,7 @@ class TestKeggOrthologyParser(TestCase):
         self.assertIn('M00027', tested_entry.modules.keys())
         self.assertIn('RN', tested_entry.dblinks.dict().keys())
         self.assertIn('LVE', tested_entry.genes.keys())
+        # Test references
+        self.assertEqual(len(tested_entry.references), 2)
+        self.assertEqual(tested_entry.references[0].pubmed_id, 2254272)
+        self.assertEqual(tested_entry.references[0].doi, "10.1128/JB.172.12.7035-7042.1990")

@@ -4,6 +4,7 @@ from pydantic import AnyUrl, BaseModel
 
 
 class KeggReferenceModel(BaseModel):
+    pubmed_id: int
     authors: List[str]
     title: str
     journal: str
