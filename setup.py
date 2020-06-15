@@ -4,7 +4,7 @@ exec(open('bioapi/version.py').read())
 
 setup(
     name="bioapi",
-    version=__version__,
+    version=__version__,  # noqa
     description='Light library to perform request to different bioinformatics APIs',
     author='Kenzo-Hugo Hillion',
     author_email='kehillio@pasteur.fr',

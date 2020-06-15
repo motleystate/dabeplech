@@ -6,8 +6,8 @@
 API documentation
 *****************
 
-API
-===
+API Services
+============
 
 KEGG
 ----
