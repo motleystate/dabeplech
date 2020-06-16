@@ -33,7 +33,9 @@ class KEGGAPI(BaseAPI):
         self.last_url_requested = full_url
         response.raise_for_status()
         if self.LIST_PARSER.get(database, None) is not None:
-            return self.LIST_PARSER.get(database)(response.text)
+            parser = self.LIST_PARSER.get(database)(response.text)
+            parser.parse()
+            return parser.dict()
         else:
             logger.warning("Parser not defined yet for %s, returning plain text", database)
         return response.text
@@ -52,7 +54,7 @@ class KEGGAPI(BaseAPI):
         if self.GET_PARSER.get(database, None) is not None:
             parser = self.GET_PARSER.get(database)(response.text)
             parser.parse()
-            return parser.validated_entry.dict()
+            return parser.validated_entry.dict(exclude_none=True)
         else:
             logger.warning("Parser not defined yet for %s, returning plain text", database)
         return response.text
