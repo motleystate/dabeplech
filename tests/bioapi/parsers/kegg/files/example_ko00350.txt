@@ -1,0 +1,204 @@
+ENTRY       ko00350                     Pathway
+NAME        Tyrosine metabolism
+CLASS       Metabolism; Amino acid metabolism
+PATHWAY_MAP ko00350  Tyrosine metabolism
+MODULE      M00042  Catecholamine biosynthesis, tyrosine => dopamine => noradrenaline => adrenaline [PATH:ko00350]
+            M00043  Thyroid hormone biosynthesis, tyrosine => triiodothyronine/thyroxine [PATH:ko00350]
+            M00044  Tyrosine degradation, tyrosine => homogentisate [PATH:ko00350]
+            M00533  Homoprotocatechuate degradation, homoprotocatechuate => 2-oxohept-3-enedioate [PATH:ko00350]
+DISEASE     H00163  Alkaptonuria
+            H00165  Tyrosinemia
+            H00168  Oculocutaneous albinism
+            H00251  Thyroid dyshormonogenesis
+            H00548  Brunner syndrome
+            H00831  Primary dystonia
+            H01005  Dopamine beta-hydroxylase deficiency
+            H01161  Aromatic L-amino acid decarboxylase deficiency
+DBLINKS     GO: 0006570
+ORTHOLOGY   K14454  aspartate aminotransferase, cytoplasmic [EC:2.6.1.1]
+            K14455  aspartate aminotransferase, mitochondrial [EC:2.6.1.1]
+            K00811  aspartate aminotransferase, chloroplastic [EC:2.6.1.1]
+            K00812  aspartate aminotransferase [EC:2.6.1.1]
+            K00813  aspartate aminotransferase [EC:2.6.1.1]
+            K11358  aspartate aminotransferase [EC:2.6.1.1]
+            K15849  bifunctional aspartate aminotransferase and glutamate/aspartate-prephenate aminotransferase [EC:2.6.1.1 2.6.1.78 2.6.1.79]
+            K00815  tyrosine aminotransferase [EC:2.6.1.5]
+            K00817  histidinol-phosphate aminotransferase [EC:2.6.1.9]
+            K00832  aromatic-amino-acid transaminase [EC:2.6.1.57]
+            K00838  aromatic amino acid aminotransferase I / 2-aminoadipate transaminase [EC:2.6.1.57 2.6.1.39 2.6.1.27 2.6.1.5]
+            K05821  aromatic amino acid aminotransferase II [EC:2.6.1.58 2.6.1.28]
+            K00270  phenylalanine dehydrogenase [EC:1.4.1.20]
+            K03334  L-amino-acid oxidase [EC:1.4.3.2]
+            K00457  4-hydroxyphenylpyruvate dioxygenase [EC:1.13.11.27]
+            K00451  homogentisate 1,2-dioxygenase [EC:1.13.11.5]
+            K01800  maleylacetoacetate isomerase [EC:5.2.1.2]
+            K01555  fumarylacetoacetase [EC:3.7.1.2]
+            K16171  fumarylacetoacetate (FAA) hydrolase [EC:3.7.1.2]
+            K00422  polyphenol oxidase [EC:1.10.3.1]
+            K00505  tyrosinase [EC:1.14.18.1]
+            K00501  tyrosine 3-monooxygenase [EC:1.14.16.2]
+            K01827  dopachrome tautomerase [EC:5.3.3.12]
+            K22203  dopachrome tautomerase [EC:5.3.3.12]
+            K00506  tyrosinase-related protein 1 [EC:1.14.18.-]
+            K22329  tyrosine decarboxylase [EC:4.1.1.25]
+            K01592  tyrosine decarboxylase [EC:4.1.1.25]
+            K22330  tyrosine decarboxylase [EC:4.1.1.25]
+            K18933  tyrosine decarboxylase / aspartate 1-decarboxylase [EC:4.1.1.25 4.1.1.11]
+            K01593  aromatic-L-amino-acid/L-tryptophan decarboxylase [EC:4.1.1.28 4.1.1.105]
+            K00503  dopamine beta-monooxygenase [EC:1.14.17.1]
+            K00553  phenylethanolamine N-methyltransferase [EC:2.1.1.28]
+            K00545  catechol O-methyltransferase [EC:2.1.1.6]
+            K00274  monoamine oxidase [EC:1.4.3.4]
+            K00276  primary-amine oxidase [EC:1.4.3.21]
+            K13371  aralkylamine dehydrogenase light chain [EC:1.4.9.2]
+            K13372  aralkylamine dehydrogenase heavy chain [EC:1.4.9.2]
+            K01618  3,4-dihydroxyphenylacetaldehyde synthase [EC:4.1.1.107]
+            K00129  aldehyde dehydrogenase (NAD(P)+) [EC:1.2.1.5]
+            K13951  alcohol dehydrogenase 1/7 [EC:1.1.1.1]
+            K13980  alcohol dehydrogenase 4 [EC:1.1.1.1]
+            K00121  S-(hydroxymethyl)glutathione dehydrogenase / alcohol dehydrogenase [EC:1.1.1.284 1.1.1.1]
+            K13952  alcohol dehydrogenase 6 [EC:1.1.1.1]
+            K04072  acetaldehyde dehydrogenase / alcohol dehydrogenase [EC:1.2.1.10 1.1.1.1]
+            K13953  alcohol dehydrogenase, propanol-preferring [EC:1.1.1.1]
+            K13954  alcohol dehydrogenase [EC:1.1.1.1]
+            K18857  alcohol dehydrogenase class-P [EC:1.1.1.1]
+            K00001  alcohol dehydrogenase [EC:1.1.1.1]
+            K22327  4-hydroxyphenylacetaldehyde synthase [EC:4.1.1.108]
+            K00483  4-hydroxyphenylacetate 3-monooxygenase [EC:1.14.14.9]
+            K23492  4-hydroxyphenylacetate 3-monooxygenase [EC:1.14.14.9]
+            K16901  anthranilate 3-monooxygenase (FAD) / 4-hydroxyphenylacetate 3-monooxygenase [EC:1.14.14.8 1.14.14.9]
+            K00484  flavin reductase (NADH) [EC:1.5.1.36]
+            K23470  4-hydroxyphenylacetate 3-hydroxylase, reductase component [EC:1.5.1.36]
+            K16902  FAD reductase [NAD(P)H] [EC:1.5.1.45]
+            K00455  3,4-dihydroxyphenylacetate 2,3-dioxygenase [EC:1.13.11.15]
+            K00151  5-carboxymethyl-2-hydroxymuconic-semialdehyde dehydrogenase [EC:1.2.1.60]
+            K10219  2-hydroxy-4-carboxymuconate semialdehyde hemiacetal dehydrogenase [EC:1.1.1.312]
+            K01826  5-carboxymethyl-2-hydroxymuconate isomerase [EC:5.3.3.10]
+            K05921  5-oxopent-3-ene-1,2,5-tricarboxylate decarboxylase / 2-hydroxyhepta-2,4-diene-1,7-dioate isomerase [EC:4.1.1.68 5.3.3.-]
+            K02509  2-oxo-hept-3-ene-1,7-dioate hydratase [EC:4.2.1.-]
+            K02510  4-hydroxy-2-oxoheptanedioate aldolase [EC:4.1.2.52]
+            K00135  succinate-semialdehyde dehydrogenase / glutarate-semialdehyde dehydrogenase [EC:1.2.1.16 1.2.1.79 1.2.1.20]
+            K01668  tyrosine phenol-lyase [EC:4.1.99.2]
+            K10774  tyrosine ammonia-lyase [EC:4.3.1.23]
+            K00431  thyroid peroxidase [EC:1.11.1.8]
+            K00055  aryl-alcohol dehydrogenase [EC:1.1.1.90]
+            K00157  aldehyde oxidase [EC:1.2.3.1]
+            K00450  gentisate 1,2-dioxygenase [EC:1.13.11.4]
+            K01801  maleylpyruvate isomerase [EC:5.2.1.4]
+            K16163  maleylpyruvate isomerase [EC:5.2.1.4]
+            K01557  acylpyruvate hydrolase [EC:3.7.1.5]
+            K16164  acylpyruvate hydrolase [EC:3.7.1.5]
+            K16165  fumarylpyruvate hydrolase [EC:3.7.1.20]
+            K20758  maleylpyruvate hydrolase [EC:3.7.1.23]
+            K07253  phenylpyruvate tautomerase [EC:5.3.2.1]
+            K23109  aromatic 2-oxoacid reductase [EC:1.1.1.110]
+            K18606  hydroxyphenylpyruvate reductase [EC:1.1.1.237]
+            K13574  hydroxycarboxylate dehydrogenase B [EC:1.1.1.237 1.1.1.-]
+            K21425  rosmarinate synthase [EC:2.3.1.140]
+COMPOUND    C00022  Pyruvate
+            C00042  Succinate
+            C00082  L-Tyrosine
+            C00122  Fumarate
+            C00146  Phenol
+            C00164  Acetoacetate
+            C00232  Succinate semialdehyde
+            C00355  3,4-Dihydroxy-L-phenylalanine
+            C00483  Tyramine
+            C00530  Hydroquinone
+            C00544  Homogentisate
+            C00547  L-Noradrenaline
+            C00628  2,5-Dihydroxybenzoate
+            C00642  4-Hydroxyphenylacetate
+            C00788  L-Adrenaline
+            C00811  4-Coumarate
+            C00822  Dopaquinone
+            C01036  4-Maleylacetoacetate
+            C01060  3,5-Diiodo-L-tyrosine
+            C01061  4-Fumarylacetoacetate
+            C01161  3,4-Dihydroxyphenylacetate
+            C01179  3-(4-Hydroxyphenyl)pyruvate
+            C01384  Maleic acid
+            C01693  L-Dopachrome
+            C01829  Thyroxine
+            C01850  Rosmarinate
+            C02167  Maleylpyruvate
+            C02442  N-Methyltyramine
+            C02465  Triiodothyronine
+            C02514  3-Fumarylpyruvate
+            C02515  3-Iodo-L-tyrosine
+            C03063  2-Oxohept-3-enedioate
+            C03077  4-Chlorophenylacetate
+            C03758  Dopamine
+            C03765  4-Hydroxyphenylacetaldehyde
+            C03964  (R)-3-(4-Hydroxyphenyl)lactate
+            C04043  3,4-Dihydroxyphenylacetaldehyde
+            C04045  3-(3,4-Dihydroxyphenyl)pyruvate
+            C04052  5-Carboxy-2-oxohept-3-enedioate
+            C04185  5,6-Dihydroxyindole-2-carboxylate
+            C04186  5-Carboxymethyl-2-hydroxymuconate
+            C04368  3-Amino-3-(4-hydroxyphenyl)propanoate
+            C04642  2-Hydroxy-5-carboxymethylmuconate semialdehyde
+            C04796  4-(L-Alanin-3-yl)-2-hydroxy-cis,cis-muconate 6-semialdehyde
+            C04797  5-(L-Alanin-3-yl)-2-hydroxy-cis,cis-muconate 6-semialdehyde
+            C05338  4-Hydroxyphenylacetyl-CoA
+            C05350  2-Hydroxy-3-(4-hydroxyphenyl)propenoate
+            C05576  3,4-Dihydroxyphenylethyleneglycol
+            C05577  3,4-Dihydroxymandelaldehyde
+            C05578  5,6-Dihydroxyindole
+            C05579  Indole-5,6-quinone
+            C05580  3,4-Dihydroxymandelate
+            C05581  3-Methoxy-4-hydroxyphenylacetaldehyde
+            C05582  Homovanillate
+            C05583  3-Methoxy-4-hydroxyphenylglycolaldehyde
+            C05584  3-Methoxy-4-hydroxymandelate
+            C05585  Gentisate aldehyde
+            C05587  3-Methoxytyramine
+            C05588  L-Metanephrine
+            C05589  L-Normetanephrine
+            C05593  3-Hydroxyphenylacetate
+            C05594  3-Methoxy-4-hydroxyphenylethyleneglycol
+            C05595  4-Hydroxyphenylacetylglutamic acid
+            C05596  p-Hydroxyphenylacetylglycine
+            C05600  2-Hydroxyhepta-2,4-dienedioate
+            C05604  2-Carboxy-2,3-dihydro-5,6-dihydroxyindole
+            C06044  4-Hydroxyphenylethanol
+            C06046  Salidroside
+            C06047  Stizolobate
+            C06048  Stizolobinate
+            C06199  Hordenine
+            C06201  2,4-Dihydroxyhept-2-enedioate
+            C10447  3,4-Dihydroxyphenylpropanoate
+            C17935  Cysteinyldopa
+            C17936  Phaeomelanin
+            C17937  Eumelanin
+            C17938  5,6-Indolequinone-2-carboxylic acid
+            C22038  (R)-3-(3,4-Dihydroxyphenyl)lactate
+REFERENCE   PMID:8550403
+  AUTHORS   Prieto MA, Diaz E, Garcia JL.
+  TITLE     Molecular characterization of the 4-hydroxyphenylacetate catabolic pathway of Escherichia coli W: engineering a mobile aromatic degradative cluster.
+  JOURNAL   J Bacteriol 178:111-20 (1996)
+            DOI:10.1128/JB.178.1.111-120.1996
+REFERENCE   PMID:1194238
+  AUTHORS   Sparnins VL, Dagley S.
+  TITLE     Alternative routes of aromatic catabolism in Pseudomonas acidovorans and Pseudomonas putida: gallic acid as a substrate and inhibitor of dioxygenases.
+  JOURNAL   J Bacteriol 124:1374-81 (1975)
+            DOI:10.1128/JB.124.3.1374-1381.1975
+REFERENCE   PMID:18435614
+  AUTHORS   Ito S, Wakamatsu K
+  TITLE     Chemistry of mixed melanogenesis--pivotal roles of dopaquinone.
+  JOURNAL   Photochem Photobiol 84:582-92 (2008)
+            DOI:10.1111/j.1751-1097.2007.00238.x
+REFERENCE   PMID:11171088
+  AUTHORS   Olivares C, Jimenez-Cervantes C, Lozano JA, Solano F, Garcia-Borron JC
+  TITLE     The 5,6-dihydroxyindole-2-carboxylic acid (DHICA) oxidase activity of human tyrosinase.
+  JOURNAL   Biochem J 354:131-9 (2001)
+            DOI:10.1042/bj3540131
+REL_PATHWAY ko00020  Citrate cycle (TCA cycle)
+            ko00360  Phenylalanine metabolism
+            ko00400  Phenylalanine, tyrosine and tryptophan biosynthesis
+            ko00620  Pyruvate metabolism
+            ko00621  Dioxin degradation
+            ko00650  Butanoate metabolism
+            ko00940  Phenylpropanoid biosynthesis
+            ko00950  Isoquinoline alkaloid biosynthesis
+///

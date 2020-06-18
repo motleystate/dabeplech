@@ -1,4 +1,2 @@
-from .kegg import (  # noqa
-    KeggOrthologyModel,
-    KeggPathwayModel
-)
+from .orthology import KeggOrthologyModel  # noqa
+from .pathway import KeggPathwayModel  # noqa

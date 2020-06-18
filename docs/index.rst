@@ -1,7 +1,7 @@
 .. BioAPI
 
-Welcome to ToolDog's documentation!
-===================================
+Welcome to BioAPI's documentation!
+==================================
 
 Light library to perform requests to different bioinformatics APIs.
 
