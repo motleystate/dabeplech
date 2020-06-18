@@ -1,6 +1,6 @@
 import logging
 
-from bioapi.models.kegg.kegg import BaseModel
+from bioapi.models.kegg.base import BaseKeggModel
 from bioapi.parsers.kegg.reference import KeggReferenceParser
 
 logging.basicConfig()
@@ -11,7 +11,7 @@ class BaseKeggParser:
     """
     Base structure for parsers for KEGG API
     """
-    model = BaseModel  # Pydantic model to describe the response
+    model = BaseKeggModel  # Pydantic model to describe the response
 
     def __init__(self, text_response: str):
         """
@@ -23,7 +23,7 @@ class BaseKeggParser:
         self.skipped_lines = 0
 
     def _handle_default(self, line: str, **kwargs):
-        # logging.warning("not implemented yet")
+        logger.info("Skipped line: %s" % line)
         self.skipped_lines += 1
 
     def _handle_entry(self, line: str, **kwargs):
@@ -90,6 +90,8 @@ class BaseKeggParser:
         Perform parsing of the text content into the model defined for KEGG orthology.
         """
         for line in self.lines:
+            if '///' in line:  # end of lines
+                break
             if not line.startswith(' '):  # There is a category to be handled
                 category = line.split()[0].lower()
                 handler = f"_handle_{category}"

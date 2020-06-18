@@ -23,6 +23,7 @@ pip install bioapi
 
 ```python
 from bioapi import KEGGAPI
+
 api = KEGGAPI()
 kegg_entry = api.get("K00135")
 ```

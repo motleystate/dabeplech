@@ -8,20 +8,23 @@ Changelogs
 
 Summary of developments of BioAPI library.
 
-v0.1
+v0.0
 ====
+
+v0.0.2 (net released)
+---------------------
+
+* Add parser for KEGG pathway response
 
 v0.0.1
 ------
 
 This is the first release of BioAPI:
 
-* Import bio.tools description from online or local JSON file
-* Generation of Galaxy XML:
+* Parser for KEGG orthology response
+* Base structure for KEGG API
 
-  * Generates skeleton from bio.tools description (metadata)
-  * Possibility to add EDAM annotation and citations to existing Galaxy XML
+    * Return structured dict if parser available
+    * If no parser available, return raw response from KEGG API
 
-* Generation CWL tool:
-
-  * Generates skeleton from bio.tools description (metadata)
+* Base structure for TogoWS API

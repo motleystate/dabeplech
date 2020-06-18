@@ -43,6 +43,8 @@ class TestKeggPathwayParser(TestCase):
         # Test specifics
         self.assertEqual(tested_entry.entry_id, 'map00350')
         self.assertEqual(tested_entry.ko_pathway, 'ko00350')
+        # List
+        self.assertIn('Amino acid metabolism', tested_entry.classes)
         # Keys of dict
         self.assertIn('map00020', tested_entry.related_pathways.keys())
         self.assertIn('map00350', tested_entry.pathway_maps.keys())
