@@ -7,7 +7,7 @@ from bioapi.parsers.kegg import KeggOrthologyParser
 class TestKeggOrthologyParser(TestCase):
 
     def test_parsing(self):
-        input_path = os.path.join(os.path.dirname(__file__), 'example_K00135.txt')
+        input_path = os.path.join(os.path.dirname(__file__), 'files/example_K00135.txt')
         test_file = open(input_path, 'r')
         test_txt = test_file.read()
         test_parser = KeggOrthologyParser(test_txt)

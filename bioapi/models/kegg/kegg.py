@@ -9,30 +9,25 @@ from bioapi.models.kegg.references import KeggReferenceModel
 class KeggModel(BaseModel):
     entry_id: str
     name: str
-    classes: List[str] = None
-    dblinks: DBLinksModel = None
-    pathways: dict = None
     modules: dict = None
-    genes: dict = None
+    dblinks: DBLinksModel = None
     references: List[KeggReferenceModel] = None
 
 
 class KeggOrthologyModel(KeggModel):
     entry_id: str = Field(regex=r"^K\d{5}$")
-    names: List[str] = None
     definition: str = None
     ec_numbers: List[constr(regex=r'^[0-9]\.[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,2}$')] = None  # noqa
-    diseases: dict = None
+    pathways: dict = None
+    genes: dict = None
 
 
 class KeggPathwayModel(KeggModel):
     entry_id: str = Field(regex=r'^(map|ko)\d{5}$')
-    description: str
+    classes: List[str] = None
+    pathway_maps: dict = None
     diseases: dict = None
     orthologs: dict = None
-    organism: str = None
-    enzymes: list = None
-    reactions: dict = None
     compounds: dict = None
-    rel_pathways: dict = None
+    related_pathways: dict = None
     ko_pathway: str = Field(None, regex=r'^ko\d{5}$')
