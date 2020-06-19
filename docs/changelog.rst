@@ -11,8 +11,8 @@ Summary of developments of BioAPI library.
 v0.0
 ====
 
-v0.0.2 (net released)
----------------------
+v0.0.2
+------
 
 * Add parser for KEGG pathway response
 
