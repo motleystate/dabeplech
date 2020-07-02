@@ -1,12 +1,12 @@
-.. ToolDog - Tool description generator
+.. BioAPI
 
-.. _introduction:
+.. _why_bioapi:
 
-************
-Introduction
-************
+***********
+Why BioAPI?
+***********
 
-BioAPI is a light library to perform requests to different bioinformatics APIs.
+The main motivation behind BioAPI blablabla...
 
 This library also contains models description (thanks to pydantic_). It allows automatic
 documentation of the responses from APIs that are initially not described.
