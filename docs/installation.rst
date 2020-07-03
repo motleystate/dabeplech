@@ -1,7 +1,3 @@
-.. BioAPI
-
-.. _install:
-
 ************
 Installation
 ************
@@ -17,12 +13,11 @@ BioAPI works with version of Python >= 3.6.0 and uses the following dependencies
 .. _pydantic: https://github.com/samuelcolvin/pydantic/
 
 .. Note::
-    We highly recommend the use of a virtual environment such as `virtualenv`_ or `conda`_.
+    We highly recommend the use of a virtual environment such as `virtualenv`_, `pyenv`_ or `conda`_.
 
 .. _virtualenv: https://virtualenv.pypa.io/en/latest/
+.. _pyenv: https://github.com/pyenv/pyenv
 .. _conda: http://docs.readthedocs.io/en/latest/conda.html
-
-.. _installation:
 
 Installation procedure
 ======================
@@ -30,7 +25,7 @@ Installation procedure
 Pip
 ---
 
-You can use pip to install BioAPI of the latest stable version:
+You can use pip to install BioAPI of the latest stable version published on pypi:
 
 .. code-block:: bash
 
@@ -51,13 +46,8 @@ Clone the repository and install BioAPI with the following commands:
     cd bioapi
     pip install .
 
-.. _uninstallation:
-
 Uninstallation procedure
 =========================
-
-Pip
----
 
 You can remove BioAPI with the following command:
 

@@ -1,14 +1,11 @@
-.. BioAPI
-
 Welcome to BioAPI's documentation!
 ==================================
 
-BioAPI is a modern, light library to perform requests to different bioinformatics APIs with Python 3.6+.
-
-The main focusses are:
+BioAPI is a modern and light library to perform requests to different bioinformatics APIs with Python 3.6+.
+The key features of the library are the following:
 
 - **Accessible**: Designed to be easy to use.
-- **Open**: Easy to contribute to and  .
+- **Open**: Easy to contribute to and add modules to deal with your own API.
 - **Standards-based**: Based on OpenAPI, the open standards for APIs.
 
 Quickstart
@@ -37,24 +34,26 @@ Example
 
 ---------------
 
-
-BioAPI Documentation
-====================
 .. toctree::
-   :maxdepth: 1
+    :caption: BioAPI
+    :maxdepth: 2
 
-   why_bioapi
-   installation
-   how_to_use
-   supported_api
-   contribution_guide
+    why_bioapi
+    contribution_guide
 
-BioAPI API Documentation
-=========================
 .. toctree::
-   :maxdepth: 1
+    :caption: User guide
+    :maxdepth: 2
 
-   API_doc
+    installation
+    basic_usage
+    supported_api
+
+.. toctree::
+    :caption: API Documentation
+    :maxdepth: 1
+
+    API_doc
 
 Changelogs
 ==========
