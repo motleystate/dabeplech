@@ -36,31 +36,42 @@ Example
 
 .. toctree::
     :caption: BioAPI
-    :maxdepth: 2
+    :maxdepth: 1
 
     why_bioapi
-    contribution_guide
+    contribution_guide/contributing
 
 .. toctree::
     :caption: User guide
     :maxdepth: 2
 
-    installation
-    basic_usage
-    supported_api
+    user_guide/installation
+    user_guide/basic_usage
+    user_guide/supported_api
+
+.. toctree::
+    :caption: Contribution guide
+    :maxdepth: 2
+
+    contribution_guide/environment
+    contribution_guide/issue
+    contribution_guide/model
+    contribution_guide/parser
+    contribution_guide/api_connector
+    contribution_guide/code_of_conduct
 
 .. toctree::
     :caption: API Documentation
     :maxdepth: 1
 
-    API_doc
+    api_docs/api_services
+    api_docs/parsers
 
-Changelogs
-==========
 .. toctree::
-   :maxdepth: 1
+    :caption: Changelogs
+    :maxdepth: 1
 
-   changelog
+    changelogs
 
 ..
   Indices and tables
