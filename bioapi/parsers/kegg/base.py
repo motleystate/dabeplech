@@ -13,11 +13,11 @@ class BaseKeggParser:
     """
     model = BaseKeggModel  # Pydantic model to describe the response
 
-    def __init__(self, text_response: str):
+    def __init__(self, content_response: str):
         """
-        :param text_response: Full plain text response from KEGG API
+        :param content_response: content response from the API
         """
-        self.lines = text_response.rstrip().split('\n')
+        self.lines = content_response.rstrip().split('\n')
         self.handler = '_handle_entry'
         self.current_ref = None
         self.skipped_lines = 0
