@@ -1,3 +1,8 @@
-********************
-Parser for your data
-********************
+.. _contrib_parser:
+
+*******
+Parsers
+*******
+
+.. Note::
+    Optional

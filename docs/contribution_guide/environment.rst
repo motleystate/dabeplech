@@ -1,3 +1,5 @@
+.. _contrib_environment:
+
 ***********************
 Development environment
 ***********************

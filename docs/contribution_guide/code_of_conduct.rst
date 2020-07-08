@@ -1,3 +1,5 @@
+.. _contrib_conduct:
+
 ***************
 Code of Conduct
 ***************

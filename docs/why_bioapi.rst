@@ -10,7 +10,7 @@ The main motivation behind BioAPI is to provide a simple way to query bioinforma
 
 It is also designed in a way to ease any contributions and try to keep its structure as simple as possible.
 
-This library also contains models description (thanks to pydantic_). It allows validations and generating
-documentation of the responses from APIs that are initially not described or following any standards.
+This library contains models description (thanks to pydantic_). It allows validations of the format and the generation
+of a documentation of the responses from APIs that are initially not described or following any standards.
 
 .. _pydantic: https://github.com/samuelcolvin/pydantic/
