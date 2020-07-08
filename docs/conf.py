@@ -1,6 +1,10 @@
 import os
 import sys
 
+from bioapi import __version__
+
+# from bioapi import version
+
 sys.path.insert(0, os.path.abspath('../../bioapi'))
 
 # Configuration file for the Sphinx documentation builder.
@@ -25,12 +29,12 @@ sys.path.insert(0, os.path.abspath('../../bioapi'))
 # The master toctree document.
 master_doc = 'index'
 
-project = 'bioapi'
+project = 'BioAPI'
 copyright = '2020, Kenzo-Hugo Hillion'
 author = 'Kenzo-Hugo Hillion'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -62,4 +66,4 @@ html_theme = 'sphinx_rtd_theme'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+# html_static_path = ['static']

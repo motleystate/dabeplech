@@ -1,33 +1,77 @@
-.. BioAPI
-
 Welcome to BioAPI's documentation!
 ==================================
 
-Light library to perform requests to different bioinformatics APIs.
+BioAPI is a modern and light library to perform requests to different bioinformatics APIs with Python 3.6+.
+The key features of the library are the following:
 
-BioAPI
-======
+- **Accessible**: Designed to be easy to use.
+- **Open**: Easy to contribute to and add modules to deal with your own API.
+- **Standards-based**: Based on OpenAPI, the open standards for APIs.
+
+Quickstart
+----------
+
+Installation
+""""""""""""
+
+.. code-block:: bash
+
+   pip install bioapi
+
+Example
+"""""""
+
+.. code-block:: python
+
+   from bioapi import KEGGAPI
+
+   api = KEGGAPI()
+   kegg_entry = api.get("K00135")
+
+   print(kegg_entry.get('name'))
+   # OUTPUT: gabD
+
+
+---------------
+
 .. toctree::
-   :maxdepth: 2
+    :caption: BioAPI
+    :maxdepth: 1
 
-   introduction
-   installation
-   how_to_use
-   supported_api
+    why_bioapi
+    contribution_guide/contributing
 
-BioAPI API Documentation
-=========================
 .. toctree::
-   :maxdepth: 2
+    :caption: User guide
+    :maxdepth: 2
 
-   API_doc
+    user_guide/installation
+    user_guide/basic_usage
+    user_guide/supported_api
 
-Changelogs
-==========
 .. toctree::
-   :maxdepth: 1
+    :caption: Contribution guide
+    :maxdepth: 2
 
-   changelog
+    contribution_guide/environment
+    contribution_guide/flow
+    contribution_guide/model
+    contribution_guide/parser
+    contribution_guide/api_connector
+    contribution_guide/code_of_conduct
+
+.. toctree::
+    :caption: API Documentation
+    :maxdepth: 1
+
+    api_docs/api_services
+    api_docs/parsers
+
+.. toctree::
+    :caption: Changelogs
+    :maxdepth: 1
+
+    changelogs
 
 ..
   Indices and tables

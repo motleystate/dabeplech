@@ -1,15 +1,9 @@
-.. BioAPI
-
-.. _how_to_use:
-
-*******************
-How to use BioAPI ?
-*******************
+***********
+Basic usage
+***********
 
 Get data with API connectors
 ============================
-
-
 
 KEGG example
 ------------
