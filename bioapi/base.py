@@ -24,6 +24,9 @@ class BaseAPI(object):
 
 
 class LISTMixin:
+    """
+    Corresponds to a ``GET`` that retrieve all items
+    """
 
     def get_all(self, params=None):
         response = self.session.get(self.url, params=params)
@@ -33,6 +36,9 @@ class LISTMixin:
 
 
 class GETMixin:
+    """
+    Corresponds to a ``GET`` that retrieve one item from its ID
+    """
 
     def get(self, entry_id, params=None):
         full_url = urljoin(self.url, entry_id)

@@ -1,7 +1,7 @@
 .. _contrib_flow:
 
 *****************
-Contribution flow
+Contribution Flow
 *****************
 
 Every contributions need to go through a

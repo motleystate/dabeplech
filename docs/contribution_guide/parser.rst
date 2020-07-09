@@ -4,7 +4,7 @@
 Parsers
 *******
 
-.. Note::
+.. Warning::
     This step is optional and is required only if the related API does not return
     JSON format.
 
@@ -15,6 +15,7 @@ you described for the API
 Parser structure
 ================
 
+Parsers are build on the :ref:`model previously described <contrib_model>` for your API.
 An abstract class is available to give you the main lines to build your parser:
 
 .. automodule:: bioapi.parsers.base
@@ -27,3 +28,9 @@ An abstract class is available to give you the main lines to build your parser:
     We are aware that some API needs more specific and complex parsing, but the idea
     is to be perform parsing with the ``parse`` method and obtain the validated
     data with ``validated_entry`` property.
+
+Test your parser
+================
+
+You can add your unit tests for your parser within ``/tests/bioapi/parsers`` directory.
+You can have a look at the tests for kegg to help you build your own tests.

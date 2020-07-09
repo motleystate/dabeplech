@@ -3,8 +3,8 @@ from .base import (
 )
 
 
-class MetageneDBAPI(BaseAPI, LISTMixin, GETMixin, POSTMixin, PUTMixin):
-    BASE_URL = 'http://localhost/'
+class BaseMetageneDBAPI(BaseAPI):
+    BASE_URL = 'https://metagenedb.pasteur.cloud/'
 
     def __init__(self, base_url=BASE_URL, jwt_token=None):
         self.base_url = base_url
@@ -15,8 +15,12 @@ class MetageneDBAPI(BaseAPI, LISTMixin, GETMixin, POSTMixin, PUTMixin):
             })
 
 
-class MetageneDBCatalogTokenAPI(MetageneDBAPI):
+class MetageneDBTokenAPI(BaseMetageneDBAPI, POSTMixin):
     ROUTE = 'api/auth/obtain_token/'
+
+
+class MetageneDBAPI(BaseMetageneDBAPI, LISTMixin, GETMixin, POSTMixin, PUTMixin):
+    pass
 
 
 class MetageneDBCatalogGeneAPI(MetageneDBAPI):

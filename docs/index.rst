@@ -51,13 +51,14 @@ Example
 
 .. toctree::
     :caption: Contribution guide
-    :maxdepth: 2
+    :maxdepth: 1
 
     contribution_guide/environment
     contribution_guide/flow
     contribution_guide/model
     contribution_guide/parser
     contribution_guide/api_connector
+    contribution_guide/docs
     contribution_guide/code_of_conduct
 
 .. toctree::

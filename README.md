@@ -8,10 +8,11 @@ Light library to perform requests to different bioinformatics APIs.
 This library also contains models description (thanks to [pydantic](https://github.com/samuelcolvin/pydantic/)). It allows automatic
 documentation of the responses from API that are initially not described.
 
+Please have a look at our [Documentation](https://bioapi.readthedocs.io/en/latest/index.html) for more information.
+
 #### List of supported services
 
-* [KEGG API](https://www.kegg.jp/kegg/rest/keggapi.html)
-* [TogoWS service](http://togows.dbcls.jp/)
+List of supported services is listed in the [documentation](https://bioapi.readthedocs.io/en/latest/user_guide/supported_api.html).
 
 ## Install
 
@@ -46,6 +47,12 @@ kegg_entry_dict = kegg_entry.dict()  # Transform model to dict
 
 ### Test endpoints
 
-Status of different endpoints can be test with `api_status.py` script from `tests` folder.
+Status of different endpoints can be test with `api_status.py` script from `tests` directory.
 
 If the test works, you will get some green output. Do not be surprised if you get `ERROR` in green, it means it is expected.
+
+-----------------------------------------
+
+## Contributions
+
+All contributions are welcome. Please have a look at our [Contribution Guide](https://bioapi.readthedocs.io/en/latest/contribution_guide/contributing.html).
