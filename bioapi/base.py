@@ -36,7 +36,7 @@ class LISTMixin:
 
 
 class GETMixin:
-     """
+    """
     Corresponds to a ``GET`` that retrieve one item from its ID
     """
 
