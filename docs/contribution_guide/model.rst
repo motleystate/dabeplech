@@ -4,6 +4,10 @@
 Model description of the response
 *********************************
 
+.. Warning::
+    This step is optional and is required only if the related API does not return
+    JSON format. Its main purpose at the moment is to help you build parsers.
+
 Models description are done using pydantic_. In brief, it uses Python type
 annotations to perform validations. Please check to
 `Pydantic models documentation <https://pydantic-docs.helpmanual.io/usage/models/>`_
@@ -25,10 +29,10 @@ Example
 Let's say your API return some information about a gene:
 
 .. code-block:: yaml
-    
+
     {
         'gene_id': 'gene-3529',
-        'name': 'Illhan',
+        'name': 'Illestere',
         'sequence': 'acgtatcgaacagcatgcatgt'
     }
 
@@ -43,10 +47,10 @@ You could therefore describe your response as followed:
         name: str
         sequence: str
 
-It is as simple as that! 
+It is as simple as that!
 
 .. Note::
-    Structure can be way more complex, with nested structure, regex validation, non mandatory 
+    Structure can be way more complex, with nested structure, regex validation, non mandatory
     fields... You can find all you need on the
     `Pydantic models documentation <https://pydantic-docs.helpmanual.io/usage/models/>`_.
 

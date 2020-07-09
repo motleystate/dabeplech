@@ -18,7 +18,7 @@ class BaseParser(ABC):
     @abstractmethod
     def parse(self):
         """
-        Perform parsing of the content_response
+        Perform parsing of the ``content_response``
         """
         pass
 
