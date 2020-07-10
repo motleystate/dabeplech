@@ -1,3 +1,9 @@
+import logging
+
+logging.basicConfig()
+logger = logging.getLogger()
+
+
 class KeggReferenceParser:
     """
     Simple class that handle parsing of the REFERENCE part from KEGG API
@@ -22,7 +28,11 @@ class KeggReferenceParser:
         :param line: corresponding line
         :type line: STR
         """
-        self._pubmed_id = line.split()[1].split('PMID:')[-1].strip()
+        if 'PMID' not in line:
+            logger.warning("no PMID for the reference. Corresponding line: %s", line)
+            self._pubmed_id = None
+        else:
+            self._pubmed_id = line.split()[1].split('PMID:')[-1].strip()
 
     @property
     def authors(self):
