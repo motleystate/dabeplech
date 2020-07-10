@@ -48,3 +48,23 @@ class TestKeggPathwayParser(TestCase):
         # Keys of dict
         self.assertIn('map00020', tested_entry.related_pathways.keys())
         self.assertIn('map00350', tested_entry.pathway_maps.keys())
+
+    def test_parsing_map_with_ref_no_pubmedid(self):
+        tested_entry = self._get_tested_entry('files/example_map00030.txt')
+        # Test some of the attribute and content of the file
+        self.assertEqual(tested_entry.name, 'Pentose phosphate pathway')
+        # Test some keys of dictionnary
+        self.assertIn('M00004', tested_entry.modules.keys())
+        self.assertIn('GO', tested_entry.dblinks.dict().keys())
+        self.assertIn('H00196', tested_entry.diseases.keys())
+        # Test references
+        self.assertEqual(len(tested_entry.references), 9)
+        self.assertEqual(tested_entry.references[0].title, "[Metabolic Maps] (In Japanese)")
+        # Test specifics
+        self.assertEqual(tested_entry.entry_id, 'map00030')
+        self.assertEqual(tested_entry.ko_pathway, 'ko00030')
+        # List
+        self.assertIn('Metabolism', tested_entry.classes)
+        # Keys of dict
+        self.assertIn('map00052', tested_entry.related_pathways.keys())
+        self.assertIn('map00030', tested_entry.pathway_maps.keys())
