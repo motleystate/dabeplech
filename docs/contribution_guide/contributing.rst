@@ -5,7 +5,7 @@ Contributing to BioAPI
 You have many different ways to contribute to BioAPI:
 
 - Add new API connectors
-- Report a Bug
+- `Report a Bug <https://github.com/khillion/bioapi/issues/new?&labels=bug&template=bug_report.md>`_
 - Suggesting a new Feature
 - Update the Documentation
 - Participate to the discussions in the Github issues

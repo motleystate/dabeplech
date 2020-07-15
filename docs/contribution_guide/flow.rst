@@ -33,4 +33,4 @@ If you have a new idea that is not listed in the current issues_,
 Please feel free to create an new issue_.
 
 .. _issues: https://github.com/khillion/bioapi/issues
-.. _issue: https://github.com/khillion/bioapi/issues/new
+.. _issue: https://github.com/khillion/bioapi/issues/new/choose
