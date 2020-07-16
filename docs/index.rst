@@ -66,7 +66,6 @@ Example
     :maxdepth: 1
 
     api_docs/api_services
-    api_docs/parsers
 
 .. toctree::
     :caption: Changelogs

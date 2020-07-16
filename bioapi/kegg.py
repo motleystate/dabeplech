@@ -3,7 +3,8 @@ from urllib.parse import urljoin
 
 from bioapi.base import BaseAPI
 from bioapi.parsers.kegg import (
-    KeggOrthologyParser, KeggPathwayParser
+    KeggOrthologyParser, KeggOrthologyListParser,
+    KeggPathwayParser, KeggPathwayListParser,
 )
 
 logging.basicConfig()
@@ -17,10 +18,13 @@ class KEGGAPI(BaseAPI):
         'drug', 'dgroup', 'environ'
     ]
     BASE_URL: str = 'http://rest.kegg.jp'
-    LIST_PARSER: dict = {}
+    LIST_PARSER: dict = {
+        'ko': KeggOrthologyListParser,
+        'pathway': KeggPathwayListParser,
+    }
     GET_PARSER: dict = {
         'ko': KeggOrthologyParser,
-        'pathway': KeggPathwayParser
+        'pathway': KeggPathwayParser,
     }
 
     def get_all(self, database: str):
@@ -38,12 +42,12 @@ class KEGGAPI(BaseAPI):
         if self.LIST_PARSER.get(database, None) is not None:
             parser = self.LIST_PARSER.get(database)(response.text)
             parser.parse()
-            return parser.dict()
+            return parser.validated_model
         else:
             logger.warning("Parser not defined yet for %s, returning plain text", database)
         return response.text
 
-    def get(self, entry_id: str, get_model=False):
+    def get(self, entry_id: str, get_model=True):
         """
         :param entry_id: KEGG ID to retrieve.
         :return: response from KEGG API for the given entry_id

@@ -11,4 +11,5 @@ class BaseKeggModel(BaseModel):
     name: str
     modules: dict = None
     dblinks: DBLinksModel = None
+    diseases: dict = None
     references: List[KeggReferenceModel] = None

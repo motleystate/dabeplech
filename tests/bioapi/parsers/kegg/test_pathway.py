@@ -1,7 +1,8 @@
 import os
 from unittest import TestCase
 
-from bioapi.parsers.kegg import KeggPathwayParser
+from bioapi.parsers.kegg.list import KeggPathwayListParser
+from bioapi.parsers.kegg.pathway import KeggPathwayParser
 
 
 class TestKeggPathwayParser(TestCase):
@@ -68,3 +69,19 @@ class TestKeggPathwayParser(TestCase):
         # Keys of dict
         self.assertIn('map00052', tested_entry.related_pathways.keys())
         self.assertIn('map00030', tested_entry.pathway_maps.keys())
+
+
+class TestKeggPathwayListParser(TestCase):
+
+    def test_parsing(self):
+        input_path = os.path.join(os.path.dirname(__file__), 'files/example_list_pathway.txt')
+        test_file = open(input_path, 'r')
+        test_txt = test_file.read()
+        test_parser = KeggPathwayListParser(test_txt)
+        test_parser.parse()
+        tested_model = test_parser.validated_model
+        self.assertEqual(len(tested_model.entries), 10)
+        # Testing third entry of the list
+        tested_entry = tested_model.entries[2]
+        self.assertEqual(tested_entry.entry_id, 'map00030')
+        self.assertEqual(tested_entry.name, 'Pentose phosphate pathway')

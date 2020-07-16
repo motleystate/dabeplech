@@ -1,13 +1,14 @@
 import logging
 
 from bioapi.models.kegg.base import BaseKeggModel
+from bioapi.parsers.base import BaseParser
 from bioapi.parsers.kegg.reference import KeggReferenceParser
 
 logging.basicConfig()
 logger = logging.getLogger()
 
 
-class BaseKeggParser:
+class BaseKeggParser(BaseParser):
     """
     Base structure for parsers for KEGG API
     """
@@ -55,6 +56,9 @@ class BaseKeggParser:
 
     def _handle_module(self, line, first=False):
         self._simple_handling(line, 'modules', first=first)
+
+    def _handle_disease(self, line, first=False):
+        self._simple_handling(line, 'diseases', first=first)
 
     def _handle_reference_first(self, line):
         if self.current_ref is not None:
@@ -108,5 +112,5 @@ class BaseKeggParser:
         """
         # Reparse all the content of entry to make sure it respects the expected structure
         if self.skipped_lines > 0:
-            logger.warning("%s lines skipped from parsing")
+            logger.warning("%s lines skipped from parsing for %s", self.skipped_lines, self.entry.entry_id)
         return self.model(**self.entry.dict())
