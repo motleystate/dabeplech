@@ -15,7 +15,7 @@ class TestKeggOrthologyParser(TestCase):
         tested_entry = test_parser.validated_entry
         # Test some of the attribute and content of the file
         self.assertEqual(tested_entry.entry_id, 'K00135')
-        self.assertEqual(tested_entry.name, 'gabD')
+        self.assertIn('gabD', tested_entry.names)
         self.assertEqual(tested_entry.definition, 'succinate-semialdehyde dehydrogenase / glutarate-semialdehyde dehydrogenase')  # noqa
         # Test ec numbers list
         self.assertEqual(len(tested_entry.ec_numbers), 3)
@@ -46,5 +46,5 @@ class TestKeggOrthologyListParser(TestCase):
         # Testing third entry of the list
         tested_entry = tested_model.entries[2]
         self.assertEqual(tested_entry.entry_id, 'K00003')
-        self.assertEqual(tested_entry.name, 'hom')
+        self.assertIn('hom', tested_entry.names)
         self.assertEqual(tested_entry.definition, 'homoserine dehydrogenase')

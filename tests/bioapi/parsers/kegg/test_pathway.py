@@ -17,7 +17,7 @@ class TestKeggPathwayParser(TestCase):
 
     def _common_tests(self, tested_entry):
         # Test some of the attribute and content of the file
-        self.assertEqual(tested_entry.name, 'Tyrosine metabolism')
+        self.assertIn('Tyrosine metabolism', tested_entry.names)
         # Test some keys of dictionnary
         self.assertIn('M00042', tested_entry.modules.keys())
         self.assertIn('GO', tested_entry.dblinks.dict().keys())
@@ -53,7 +53,7 @@ class TestKeggPathwayParser(TestCase):
     def test_parsing_map_with_ref_no_pubmedid(self):
         tested_entry = self._get_tested_entry('files/example_map00030.txt')
         # Test some of the attribute and content of the file
-        self.assertEqual(tested_entry.name, 'Pentose phosphate pathway')
+        self.assertIn('Pentose phosphate pathway', tested_entry.names)
         # Test some keys of dictionnary
         self.assertIn('M00004', tested_entry.modules.keys())
         self.assertIn('GO', tested_entry.dblinks.dict().keys())
@@ -84,4 +84,4 @@ class TestKeggPathwayListParser(TestCase):
         # Testing third entry of the list
         tested_entry = tested_model.entries[2]
         self.assertEqual(tested_entry.entry_id, 'map00030')
-        self.assertEqual(tested_entry.name, 'Pentose phosphate pathway')
+        self.assertIn('Pentose phosphate pathway', tested_entry.names)

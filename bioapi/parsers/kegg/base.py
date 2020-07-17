@@ -30,10 +30,11 @@ class BaseKeggParser(BaseParser):
     def _handle_entry(self, line: str, **kwargs):
         entry_id = line.split()[1]
         # Starts a Kegg Orthology object with name that will be updated
-        self.entry = self.model(entry_id=entry_id, name=entry_id)
+        self.entry = self.model(entry_id=entry_id, names=[])
 
     def _handle_name(self, line: str, **kwargs):
-        self.entry.name = line.split(maxsplit=1)[-1]
+        names = line.split(maxsplit=1)[-1].split(",")
+        self.entry.names = [name.strip() for name in names]
 
     def _simple_handling(self, line: str, attr_to_set: str, first: bool = False):
         if first:

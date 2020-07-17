@@ -9,7 +9,7 @@ class TestKeggOrthologyList(TestCase):
         line = "ko:K00001	E1.1.1.1, adh; alcohol dehydrogenase [EC:1.1.1.1]"
         expected_dict = {
             'entry_id': 'K00001',
-            'name': 'E1.1.1.1, adh',
+            'names': ['E1.1.1.1', 'adh'],
             'definition': 'alcohol dehydrogenase',
             'ec_numbers': ['1.1.1.1']
         }
@@ -20,7 +20,7 @@ class TestKeggOrthologyList(TestCase):
         line = "ko:K00010	iolG; myo-inositol 2-dehydrogenase / D-chiro-inositol 1-dehydrogenase [EC:1.1.1.18 1.1.1.369]"  # noqa
         expected_dict = {
             'entry_id': 'K00010',
-            'name': 'iolG',
+            'names': ['iolG'],
             'definition': 'myo-inositol 2-dehydrogenase / D-chiro-inositol 1-dehydrogenase',
             'ec_numbers': ['1.1.1.18', '1.1.1.369']
         }
@@ -31,7 +31,7 @@ class TestKeggOrthologyList(TestCase):
         line = "ko:K00182	WNT2; wingless-type MMTV integration site family, member 2"
         expected_dict = {
             'entry_id': 'K00182',
-            'name': 'WNT2',
+            'names': ['WNT2'],
             'definition': 'wingless-type MMTV integration site family, member 2',
             'ec_numbers': None
         }
@@ -42,7 +42,7 @@ class TestKeggOrthologyList(TestCase):
         line = "ko:K23479       CCAAT/enhancer binding protein (C/EBP), other"
         expected_dict = {
             'entry_id': 'K23479',
-            'name': 'CCAAT/enhancer binding protein (C/EBP), other',
+            'names': ['CCAAT/enhancer binding protein (C/EBP)', 'other'],
             'definition': None,
             'ec_numbers': None
         }
@@ -56,7 +56,7 @@ class TestKeggPathwayList(TestCase):
         line = "path:map00030	Pentose phosphate pathway"
         expected_dict = {
             'entry_id': 'map00030',
-            'name': 'Pentose phosphate pathway',
+            'names': ['Pentose phosphate pathway'],
         }
         parser = KeggPathwayListParser("test")
         self.assertDictEqual(parser._parse_line(line), expected_dict)

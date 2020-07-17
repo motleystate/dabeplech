@@ -17,7 +17,8 @@ class KeggOrthologyListParser(BaseListParser):
     def _parse_line(self, line):
         elements = line.split(maxsplit=1)
         entry_id = elements[0].split(':')[1]
-        name = elements[1].split(';')[0]
+        names = elements[1].split(';')[0].split(',')
+        names = [name.strip() for name in names]
         if ';' in elements[1]:
             definition = elements[1].split(';')[1].split('[')[0].strip()
         else:
@@ -28,7 +29,7 @@ class KeggOrthologyListParser(BaseListParser):
             ec_numbers = None
         return {
             'entry_id': entry_id,
-            'name': name,
+            'names': names,
             'definition': definition,
             'ec_numbers': ec_numbers
         }
@@ -47,10 +48,11 @@ class KeggPathwayListParser(BaseListParser):
     def _parse_line(self, line):
         elements = line.split(maxsplit=1)
         entry_id = elements[0].split(':')[1]
-        name = elements[1].strip()
+        names = elements[1].split(';')[0].split(',')
+        names = [name.strip() for name in names]
         return {
             'entry_id': entry_id,
-            'name': name,
+            'names': names,
         }
 
     def parse(self):
