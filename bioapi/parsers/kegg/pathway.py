@@ -30,6 +30,9 @@ class KeggPathwayParser(KeggPathwayKoParser, KeggPathwayMapParser):
     """
     model = KeggPathwayModel
 
+    def _handle_description(self, line: str, **kwargs):
+        self.entry.description = line.split(maxsplit=1)[-1]
+
     def _handle_class(self, line, first=False):
         if first:
             self.entry.classes = []
@@ -38,9 +41,6 @@ class KeggPathwayParser(KeggPathwayKoParser, KeggPathwayMapParser):
 
     def _handle_pathway_map(self, line, first=False):
         self._simple_handling(line, 'pathway_maps', first=first)
-
-    def _handle_disease(self, line, first=False):
-        self._simple_handling(line, 'diseases', first=first)
 
     def _handle_rel_pathway(self, line, first=False):
         self._simple_handling(line, 'related_pathways', first=first)

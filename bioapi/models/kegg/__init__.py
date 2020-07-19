@@ -1,2 +1,2 @@
-from .orthology import KeggOrthologyModel  # noqa
-from .pathway import KeggPathwayModel  # noqa
+from .orthology import KeggOrthologyModel, KeggOrthologyListModel  # noqa
+from .pathway import KeggPathwayModel, KeggPathwayListModel  # noqa

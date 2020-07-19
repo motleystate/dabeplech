@@ -1,13 +1,14 @@
 import logging
 
 from bioapi.models.kegg.base import BaseKeggModel
+from bioapi.parsers.base import BaseParser
 from bioapi.parsers.kegg.reference import KeggReferenceParser
 
 logging.basicConfig()
 logger = logging.getLogger()
 
 
-class BaseKeggParser:
+class BaseKeggParser(BaseParser):
     """
     Base structure for parsers for KEGG API
     """
@@ -29,10 +30,11 @@ class BaseKeggParser:
     def _handle_entry(self, line: str, **kwargs):
         entry_id = line.split()[1]
         # Starts a Kegg Orthology object with name that will be updated
-        self.entry = self.model(entry_id=entry_id, name=entry_id)
+        self.entry = self.model(entry_id=entry_id, names=[])
 
     def _handle_name(self, line: str, **kwargs):
-        self.entry.name = line.split(maxsplit=1)[-1]
+        names = line.split(maxsplit=1)[-1].split(",")
+        self.entry.names = [name.strip() for name in names]
 
     def _simple_handling(self, line: str, attr_to_set: str, first: bool = False):
         if first:
@@ -55,6 +57,9 @@ class BaseKeggParser:
 
     def _handle_module(self, line, first=False):
         self._simple_handling(line, 'modules', first=first)
+
+    def _handle_disease(self, line, first=False):
+        self._simple_handling(line, 'diseases', first=first)
 
     def _handle_reference_first(self, line):
         if self.current_ref is not None:
@@ -108,5 +113,5 @@ class BaseKeggParser:
         """
         # Reparse all the content of entry to make sure it respects the expected structure
         if self.skipped_lines > 0:
-            logger.warning("%s lines skipped from parsing")
+            logger.warning("%s lines skipped from parsing for %s", self.skipped_lines, self.entry.entry_id)
         return self.model(**self.entry.dict())

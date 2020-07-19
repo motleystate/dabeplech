@@ -1,0 +1,10 @@
+path:map00010	Glycolysis / Gluconeogenesis
+path:map00020	Citrate cycle (TCA cycle)
+path:map00030	Pentose phosphate pathway
+path:map00040	Pentose and glucuronate interconversions
+path:map00051	Fructose and mannose metabolism
+path:map00052	Galactose metabolism
+path:map00053	Ascorbate and aldarate metabolism
+path:map00061	Fatty acid biosynthesis
+path:map00062	Fatty acid elongation
+path:map00071	Fatty acid degradation
