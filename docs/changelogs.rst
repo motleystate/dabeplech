@@ -11,6 +11,14 @@ Summary of developments of BioAPI library.
 v0.0
 ====
 
+v0.0.3
+------
+
+* Add parser and api for KEGG pathway list (https://github.com/khillion/bioapi/pull/10)
+* Add parser and api for KEGG ko list (https://github.com/khillion/bioapi/pull/10)
+* Change ``name`` attribute to ``names`` for KEGG
+* Handle reference with no pubmed ID (https://github.com/khillion/bioapi/pull/7)
+
 v0.0.2
 ------
 
