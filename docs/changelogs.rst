@@ -11,6 +11,11 @@ Summary of developments of BioAPI library.
 v0.0
 ====
 
+v0.0.4
+------
+
+* Replace models for pathway and ko list by simpler model
+
 v0.0.3
 ------
 

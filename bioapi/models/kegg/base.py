@@ -6,9 +6,12 @@ from bioapi.models.kegg.dblinks import DBLinksModel
 from bioapi.models.kegg.references import KeggReferenceModel
 
 
-class BaseKeggModel(BaseModel):
+class LightBaseKeggModel(BaseModel):
     entry_id: str
     names: List[str]
+
+
+class BaseKeggModel(LightBaseKeggModel):
     modules: dict = None
     dblinks: DBLinksModel = None
     diseases: dict = None

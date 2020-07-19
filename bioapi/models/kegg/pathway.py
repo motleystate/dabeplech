@@ -2,7 +2,7 @@ from typing import List
 
 from pydantic import BaseModel, Field
 
-from .base import BaseKeggModel
+from .base import BaseKeggModel, LightBaseKeggModel
 
 
 class KeggPathwayModel(BaseKeggModel):
@@ -17,4 +17,4 @@ class KeggPathwayModel(BaseKeggModel):
 
 
 class KeggPathwayListModel(BaseModel):
-    entries: List[KeggPathwayModel]
+    entries: List[LightBaseKeggModel]

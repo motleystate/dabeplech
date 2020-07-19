@@ -1,8 +1,8 @@
 from typing import List
 
-from pydantic import BaseModel, Field, constr
+from pydantic import BaseModel, Field
 
-from .base import BaseKeggModel
+from .base import BaseKeggModel, LightBaseKeggModel
 
 
 class KeggOrthologyModel(BaseKeggModel):
@@ -13,5 +13,10 @@ class KeggOrthologyModel(BaseKeggModel):
     genes: dict = None
 
 
+class LightKeggOrthologyModel(LightBaseKeggModel):
+    definition: str = None
+    ec_numbers: List[str] = None  # noqa
+
+
 class KeggOrthologyListModel(BaseModel):
-    entries: List[KeggOrthologyModel]
+    entries: List[LightKeggOrthologyModel]
