@@ -28,8 +28,8 @@ Example
    api = KEGGAPI()
    kegg_entry = api.get("K00135")
 
-   print(kegg_entry.get('name'))
-   # OUTPUT: gabD
+   print(kegg_entry.names)
+   # OUTPUT: ['gabD']
 
 
 ---------------

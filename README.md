@@ -27,20 +27,8 @@ from bioapi import KEGGAPI
 
 api = KEGGAPI()
 kegg_entry = api.get("K00135")
-```
-
-`kegg_entry` should then be a dictionnary of the information you can get from the KEGG API.
-
-> KEGG API does not return `json` format but instead some `plain text`. A parser is therefore necessary (`bioapi/parsers/kegg`) and `plain text` is returned if no parser is available for the requested database (e.g. pathway, module...)
-
-You can also get the Pydantic model instead of a `dict`:
-
-```python
-from bioapi import KEGGAPI
-
-api = KEGGAPI()
-kegg_entry = api.get("K00135", get_model=True)
-kegg_entry_dict = kegg_entry.dict()  # Transform model to dict
+print(kegg_entry.names)
+# OUTPUT: ['gabD']
 ```
 
 -----------------------------------------
