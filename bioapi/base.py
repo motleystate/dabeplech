@@ -28,7 +28,7 @@ class LISTMixin:
     Corresponds to a ``GET`` that retrieve all items
     """
 
-    def get_all(self, params=None):
+    def list(self, params=None):
         response = self.session.get(self.url, params=params)
         self.last_url_requested = self.url
         response.raise_for_status()
