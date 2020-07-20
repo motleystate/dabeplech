@@ -17,7 +17,7 @@ Description on what the API does, what we can retrieve from it...
 ## Additional information
 
 * **Does the API needs credentials and authentification?** Yes/No
-* **Does the API return JSON format?** Yes/No (*If you select `No`, a parser is need and we highly recommend to open a second dedicated issue for this*)
+* **Does the API return JSON format?** Yes/No (*If you select `No`, a parser is needed*)
 
 Any other relevant information to know before creating this API connector.
 
