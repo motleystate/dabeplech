@@ -1,0 +1,14 @@
+ko:K00135	path:map00250
+ko:K00135	path:ko00250
+ko:K00135	path:map00310
+ko:K00135	path:ko00310
+ko:K00135	path:map00350
+ko:K00135	path:ko00350
+ko:K00135	path:map00650
+ko:K00135	path:ko00650
+ko:K00135	path:map00760
+ko:K00135	path:ko00760
+ko:K00135	path:map01100
+ko:K00135	path:ko01100
+ko:K00135	path:map01120
+ko:K00135	path:ko01120
