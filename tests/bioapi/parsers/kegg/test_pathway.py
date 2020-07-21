@@ -28,7 +28,7 @@ class TestKeggPathwayParser(TestCase):
         self.assertEqual(tested_entry.references[0].doi, "10.1128/JB.178.1.111-120.1996")
 
     def test_parsing_ko(self):
-        tested_entry = self._get_tested_entry('files/example_ko00350.txt')
+        tested_entry = self._get_tested_entry('files/ko00350.txt')
         self._common_tests(tested_entry)
         # Test specifics
         self.assertEqual(tested_entry.entry_id, 'ko00350')
@@ -39,7 +39,7 @@ class TestKeggPathwayParser(TestCase):
         self.assertIn('ko00350', tested_entry.pathway_maps.keys())
 
     def test_parsing_map(self):
-        tested_entry = self._get_tested_entry('files/example_map00350.txt')
+        tested_entry = self._get_tested_entry('files/map00350.txt')
         self._common_tests(tested_entry)
         # Test specifics
         self.assertEqual(tested_entry.entry_id, 'map00350')
@@ -51,7 +51,7 @@ class TestKeggPathwayParser(TestCase):
         self.assertIn('map00350', tested_entry.pathway_maps.keys())
 
     def test_parsing_map_with_ref_no_pubmedid(self):
-        tested_entry = self._get_tested_entry('files/example_map00030.txt')
+        tested_entry = self._get_tested_entry('files/map00030.txt')
         # Test some of the attribute and content of the file
         self.assertIn('Pentose phosphate pathway', tested_entry.names)
         # Test some keys of dictionnary
@@ -74,7 +74,7 @@ class TestKeggPathwayParser(TestCase):
 class TestKeggPathwayListParser(TestCase):
 
     def test_parsing(self):
-        input_path = os.path.join(os.path.dirname(__file__), 'files/example_list_pathway.txt')
+        input_path = os.path.join(os.path.dirname(__file__), 'files/list_pathway.txt')
         test_file = open(input_path, 'r')
         test_txt = test_file.read()
         test_parser = KeggPathwayListParser(test_txt)

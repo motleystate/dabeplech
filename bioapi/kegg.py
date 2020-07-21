@@ -4,7 +4,7 @@ from urllib.parse import urljoin
 from bioapi.base import BaseAPI
 from bioapi.parsers.kegg import (
     KeggOrthologyParser, KeggOrthologyListParser,
-    KeggPathwayParser, KeggPathwayListParser,
+    KeggPathwayParser, KeggPathwayListParser, KeggLinkParser
 )
 
 logging.basicConfig()
@@ -26,10 +26,8 @@ class KEGGAPI(BaseAPI):
         'ko': KeggOrthologyParser,
         'pathway': KeggPathwayParser,
     }
-    LINK_PARSER: dict = {
-    }
 
-    def _check_db(self, database):
+    def _check_db(self, database: str):
         if database not in self.ALLOWED_DATABASES:
             raise Exception(f"<{database}> not a valid database for KEGG. Must choose among {self.ALLOWED_DATABASES}")
 
@@ -71,6 +69,14 @@ class KEGGAPI(BaseAPI):
             logger.warning("Parser not defined yet for %s, returning plain text", database)
         return response.text
 
+    def _perform_link_request(self, full_url: str):
+        response = self.session.get(full_url)
+        self.last_url_requested = full_url
+        response.raise_for_status()
+        parser = KeggLinkParser(response.text)
+        parser.parse()
+        return parser.validated_entry
+
     def link_db(self, target_db: str, source_db: str):
         """
         :param target_db: selected target database (list in self.ALLOWED_DATABASES)
@@ -81,16 +87,7 @@ class KEGGAPI(BaseAPI):
         self._check_db(target_db)
         self._check_db(source_db)
         full_url = urljoin(self.url, f"link/{target_db}/{source_db}")
-        response = self.session.get(full_url)
-        self.last_url_requested = full_url
-        response.raise_for_status()
-        if self.LINK_PARSER.get(target_db, None) is not None:
-            parser = self.LINK_PARSER.get(target_db)(response.text)
-            parser.parse()
-            return parser.validated_model
-        else:
-            logger.warning("Parser not defined yet for %s, returning plain text", target_db)
-        return response.text
+        return self._perform_link_request(full_url)
 
     def link_entries(self, target_db: str, db_entries: str):
         """
@@ -101,18 +98,9 @@ class KEGGAPI(BaseAPI):
         """
         self._check_db(target_db)
         full_url = urljoin(self.url, f"link/{target_db}/{db_entries}")
-        response = self.session.get(full_url)
-        self.last_url_requested = full_url
-        response.raise_for_status()
-        if self.LINK_PARSER.get(target_db, None) is not None:
-            parser = self.LINK_PARSER.get(target_db)(response.text)
-            parser.parse()
-            return parser.validated_model
-        else:
-            logger.warning("Parser not defined yet for %s, returning plain text", target_db)
-        return response.text
+        return self._perform_link_request(full_url)
 
-    def get(self, entry_id: str, get_model=True):
+    def get(self, entry_id: str, get_model: bool = True):
         """
         :param entry_id: KEGG ID to retrieve.
         :return: response from KEGG API for the given entry_id
