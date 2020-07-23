@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
-exec(open('bioapi/version.py').read())
+exec(open('dabeplech/version.py').read())
 
 setup(
-    name="bioapi",
+    name="dabeplech",
     version=__version__,  # noqa
     description='Light library to perform request to different bioinformatics APIs',
     author='Kenzo-Hugo Hillion',

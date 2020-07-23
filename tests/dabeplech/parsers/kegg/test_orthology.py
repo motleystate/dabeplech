@@ -1,7 +1,7 @@
 import os
 from unittest import TestCase
 
-from bioapi.parsers.kegg import KeggOrthologyParser, KeggOrthologyListParser
+from dabeplech.parsers.kegg import KeggOrthologyParser, KeggOrthologyListParser
 
 
 class TestKeggOrthologyParser(TestCase):

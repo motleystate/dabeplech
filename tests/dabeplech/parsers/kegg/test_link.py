@@ -1,7 +1,7 @@
 import os
 from unittest import TestCase
 
-from bioapi.parsers.kegg.link import KeggLinkParser
+from dabeplech.parsers.kegg.link import KeggLinkParser
 
 
 class TestKeggLinkParser(TestCase):

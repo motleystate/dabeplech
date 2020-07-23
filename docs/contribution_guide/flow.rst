@@ -5,7 +5,7 @@ Contribution Flow
 *****************
 
 Every contributions need to go through a
-`Pull request <https://github.com/khillion/bioapi/pulls>`_ either from your own fork
+`Pull request <https://github.com/khillion/dabeplech/pulls>`_ either from your own fork
 or a branch of the main repository.
 
 Issues
@@ -32,5 +32,5 @@ Create an new issue_
 If you have a new idea that is not listed in the current issues_,
 Please feel free to create an new issue_.
 
-.. _issues: https://github.com/khillion/bioapi/issues
-.. _issue: https://github.com/khillion/bioapi/issues/new/choose
+.. _issues: https://github.com/khillion/dabeplech/issues
+.. _issue: https://github.com/khillion/dabeplech/issues/new/choose

@@ -1,8 +1,8 @@
 import os
 from unittest import TestCase
 
-from bioapi.parsers.kegg.module import KeggModuleParser
-from bioapi.parsers.kegg.list import KeggModuleListParser
+from dabeplech.parsers.kegg.module import KeggModuleParser
+from dabeplech.parsers.kegg.list import KeggModuleListParser
 
 
 class TestKeggModuleParser(TestCase):

@@ -5,7 +5,7 @@ API Services
 KEGG
 ====
 
-.. automodule:: bioapi.kegg
+.. automodule:: dabeplech.kegg
     :members:
     :undoc-members:
     :special-members: __init__
@@ -15,7 +15,7 @@ KEGG
 TogoWS
 ======
 
-.. automodule:: bioapi.togows
+.. automodule:: dabeplech.togows
     :members:
     :undoc-members:
     :special-members: __init__
@@ -25,7 +25,7 @@ TogoWS
 MetageneDB
 ==========
 
-.. automodule:: bioapi.metagenedb
+.. automodule:: dabeplech.metagenedb
     :members:
     :undoc-members:
     :special-members: __init__

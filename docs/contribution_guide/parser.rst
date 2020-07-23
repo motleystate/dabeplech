@@ -18,7 +18,7 @@ Parser structure
 Parsers are build on the :ref:`model previously described <contrib_model>` for your API.
 An abstract class is available to give you the main lines to build your parser:
 
-.. automodule:: bioapi.parsers.base
+.. automodule:: dabeplech.parsers.base
     :members:
     :undoc-members:
     :special-members: __init__
@@ -32,5 +32,5 @@ An abstract class is available to give you the main lines to build your parser:
 Test your parser
 ================
 
-You can add your unit tests for your parser within ``/tests/bioapi/parsers`` directory.
+You can add your unit tests for your parser within ``/tests/dabeplech/parsers`` directory.
 You can have a look at the tests for kegg to help you build your own tests.

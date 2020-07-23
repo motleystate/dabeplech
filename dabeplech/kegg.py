@@ -1,8 +1,8 @@
 import logging
 from urllib.parse import urljoin
 
-from bioapi.base import BaseAPI
-from bioapi.parsers.kegg import (
+from dabeplech.base import BaseAPI
+from dabeplech.parsers.kegg import (
     KeggOrthologyParser, KeggOrthologyListParser,
     KeggPathwayParser, KeggPathwayListParser, KeggLinkParser,
     KeggModuleParser, KeggModuleListParser

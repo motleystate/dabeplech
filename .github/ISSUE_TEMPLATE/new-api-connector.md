@@ -1,6 +1,6 @@
 ---
 name: New API connector
-about: Add new API connector to bioapi
+about: Add new API connector to dabeplech
 title: ''
 labels: new api
 assignees: ''
@@ -23,4 +23,4 @@ Any other relevant information to know before creating this API connector.
 
 -------------------
 
-[Contribution guide for new API connector](https://bioapi.readthedocs.io/en/latest/contribution_guide/api_connector.html)
+[Contribution guide for new API connector](https://dabeplech.readthedocs.io/en/latest/contribution_guide/api_connector.html)

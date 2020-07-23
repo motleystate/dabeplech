@@ -1,8 +1,8 @@
 import logging
 
-from bioapi.models.kegg.base import BaseKeggModel
-from bioapi.parsers.base import BaseParser
-from bioapi.parsers.kegg.reference import KeggReferenceParser
+from dabeplech.models.kegg.base import BaseKeggModel
+from dabeplech.parsers.base import BaseParser
+from dabeplech.parsers.kegg.reference import KeggReferenceParser
 
 logging.basicConfig()
 logger = logging.getLogger()

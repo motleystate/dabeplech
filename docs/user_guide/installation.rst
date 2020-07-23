@@ -5,7 +5,7 @@ Installation
 Requirements
 ============
 
-BioAPI works with version of Python >= 3.6.0 and uses the following dependencies:
+dabeplech works with version of Python >= 3.6.0 and uses the following dependencies:
 
 - pydantic_ (==1.5.1)
 - requests (==2.23.0)
@@ -25,11 +25,11 @@ Installation procedure
 Pip
 ---
 
-You can use pip to install BioAPI of the latest stable version published on pypi:
+You can use pip to install dabeplech of the latest stable version published on pypi:
 
 .. code-block:: bash
 
-    pip install bioapi
+    pip install dabeplech
 
 Manually
 --------
@@ -38,22 +38,22 @@ Manually
     This is particularly useful when you wish to install a version under development from
     any branches of the Github repository.
 
-Clone the repository and install BioAPI with the following commands:
+Clone the repository and install dabeplech with the following commands:
 
 .. code-block:: bash
 
-    git clone https://github.com/khillion/bioapi.git
-    cd bioapi
+    git clone https://github.com/khillion/dabeplech.git
+    cd dabeplech
     pip install .
 
 Uninstallation procedure
 =========================
 
-You can remove BioAPI with the following command:
+You can remove dabeplech with the following command:
 
 .. code-block:: bash
 
-    pip uninstall bioapi
+    pip uninstall dabeplech
 
 .. Note::
     This will not uninstall dependencies. To do so you can make use of the pip-autoremove

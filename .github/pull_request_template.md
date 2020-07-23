@@ -16,6 +16,6 @@ Fixes #
 
 ## Definition of Done
 
-* [ ]  New lines are tested with unit tests (mandatory for the addition of a new parser: [More info](https://bioapi.readthedocs.io/en/latest/contribution_guide/parser.html))
-* [ ]  Documentation has been updated (When adding new API connector: [More info](https://bioapi.readthedocs.io/en/latest/contribution_guide/docs.html))
+* [ ]  New lines are tested with unit tests (mandatory for the addition of a new parser: [More info](https://dabeplech.readthedocs.io/en/latest/contribution_guide/parser.html))
+* [ ]  Documentation has been updated (When adding new API connector: [More info](https://dabeplech.readthedocs.io/en/latest/contribution_guide/docs.html))
 * [ ]  Pull Request has been revised by a maintainer

@@ -11,10 +11,10 @@ Virtual environment with ``venv``
 
 .. code-block:: bash
 
-    python3 -m venv bioapi_env
-    source ./bioapi_env/bin/activate
+    python3 -m venv dabeplech_env
+    source ./dabeplech_env/bin/activate
 
-This creates a directory ``./bioapi_env/`` with the Python binaries you used. You can now use the independant environment
+This creates a directory ``./dabeplech_env/`` with the Python binaries you used. You can now use the independant environment
 to install the project and packages.
 
 .. Note::
@@ -32,7 +32,7 @@ The list of tools that are only used during the development process of the libra
 Linting
 =======
 
-The BioAPI project uses Flake8_ in its continuous integration process to check the code style and structure.
+The dabeplech project uses Flake8_ in its continuous integration process to check the code style and structure.
 
 .. _Flake8: https://flake8.pycqa.org/en/latest/
 
@@ -71,7 +71,7 @@ You can also only run selected tests by specifying the name of the test file:
 
 .. code-block:: bash
 
-    pytest -s -v tests/bioapi/parsers/
+    pytest -s -v tests/dabeplech/parsers/
 
 .. Note::
 
