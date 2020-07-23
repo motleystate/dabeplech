@@ -1,7 +1,7 @@
 # Bioapi
 
-![Python package](https://github.com/khillion/bioapi/workflows/Python%20package/badge.svg)
-[![codecov](https://codecov.io/gh/khillion/bioapi/branch/master/graph/badge.svg)](https://codecov.io/gh/khillion/bioapi)
+![Python package](https://github.com/motleystate/bioapi/workflows/Python%20package/badge.svg)
+[![codecov](https://codecov.io/gh/motleystate/bioapi/branch/master/graph/badge.svg)](https://codecov.io/gh/motleystate/bioapi)
 [![Documentation Status](https://readthedocs.org/projects/bioapi/badge/?version=latest)](https://bioapi.readthedocs.io/en/latest/?badge=latest)
 
 Light library to perform requests to different bioinformatics APIs.
