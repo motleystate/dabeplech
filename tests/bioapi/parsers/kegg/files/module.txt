@@ -1,0 +1,10 @@
+md:M00001	Glycolysis (Embden-Meyerhof pathway), glucose => pyruvate
+md:M00002	Glycolysis, core module involving three-carbon compounds
+md:M00003	Gluconeogenesis, oxaloacetate => fructose-6P
+md:M00004	Pentose phosphate pathway (Pentose phosphate cycle)
+md:M00005	PRPP biosynthesis, ribose 5P => PRPP
+md:M00006	Pentose phosphate pathway, oxidative phase, glucose 6P => ribulose 5P
+md:M00007	Pentose phosphate pathway, non-oxidative phase, fructose 6P => ribose 5P
+md:M00008	Entner-Doudoroff pathway, glucose-6P => glyceraldehyde-3P + pyruvate
+md:M00009	Citrate cycle (TCA cycle, Krebs cycle)
+md:M00010	Citrate cycle, first carbon oxidation, oxaloacetate => 2-oxoglutarate
