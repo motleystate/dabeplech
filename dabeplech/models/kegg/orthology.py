@@ -2,7 +2,7 @@ from typing import List
 
 from pydantic import BaseModel, Field
 
-from bioapi.models.kegg.dblinks import DBLinksModel
+from dabeplech.models.kegg.dblinks import DBLinksModel
 from .base import BaseKeggModel
 
 

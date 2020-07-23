@@ -5,12 +5,12 @@ API connector
 New API = New Module
 ====================
 
-When adding a new API connector, please create a new module within ``bioapi`` with
-the api name. (e.g. ``bioapi/myawesomeapi.py``).
+When adding a new API connector, please create a new module within ``dabeplech`` with
+the api name. (e.g. ``dabeplech/myawesomeapi.py``).
 
 .. note::
-    To ease import while using ``bioapi``, do not forget to import your new classes
-    to ``bioapi/__init__.py``.
+    To ease import while using ``dabeplech``, do not forget to import your new classes
+    to ``dabeplech/__init__.py``.
 
 Creating your API connector
 ===========================
@@ -19,11 +19,11 @@ Base Structure
 --------------
 
 All API connectors try to follow the same structure and therefore has to inherit from
-``bioapi.base.BaseAPI``.
+``dabeplech.base.BaseAPI``.
 
 Here is the structure of the class:
 
-.. autoclass:: bioapi.base.BaseAPI
+.. autoclass:: dabeplech.base.BaseAPI
     :members:
     :undoc-members:
     :show-inheritance:
@@ -47,11 +47,11 @@ as base url and contains two routes:
 - ``https://awesomebioinfo.com/genes``: obtain information about genes
 - ``https://awesomebioinfo.com/organisms``: obtain information about organisms
 
-Here is the code that we write to add this API in ``bioapi/awesomebioinfo.py`` file:
+Here is the code that we write to add this API in ``dabeplech/awesomebioinfo.py`` file:
 
 .. code-block:: python
 
-    from bioapi.base import BaseAPI
+    from dabeplech.base import BaseAPI
 
     class AwesomebioinfoAPI(BaseAPI):
         BASE_URL = "https://awesomebioinfo.com/"
@@ -75,22 +75,22 @@ A list of Mixins is available to build your API connectors. You just need to per
 inheritance for your new classes with the corresponding Mixins to add the methods.
 Here is a description of the different Mixins:
 
-.. autoclass:: bioapi.base.LISTMixin
+.. autoclass:: dabeplech.base.LISTMixin
     :members:
     :undoc-members:
     :show-inheritance:
 
-.. autoclass:: bioapi.base.GETMixin
+.. autoclass:: dabeplech.base.GETMixin
     :members:
     :undoc-members:
     :show-inheritance:
 
-.. autoclass:: bioapi.base.POSTMixin
+.. autoclass:: dabeplech.base.POSTMixin
     :members:
     :undoc-members:
     :show-inheritance:
 
-.. autoclass:: bioapi.base.PUTMixin
+.. autoclass:: dabeplech.base.PUTMixin
     :members:
     :undoc-members:
     :show-inheritance:
@@ -103,7 +103,7 @@ and organisms, but also retrieve an item based on its ID. The code becomes:
 
 .. code-block:: python
 
-    from bioapi.base import BaseAPI, LISTMixin, GETMixin
+    from dabeplech.base import BaseAPI, LISTMixin, GETMixin
 
     class AwesomebioinfoAPI(BaseAPI, LISTMixin, GETMixin):
         BASE_URL = "https://awesomebioinfo.com/"
@@ -114,11 +114,11 @@ and organisms, but also retrieve an item based on its ID. The code becomes:
     class AwesomebioinfoOrganismsAPI((AwesomebioinfoAPI):
         ROUTE = "organisms/"
 
-Now you can use your api connector (considering classes are added to ``bioapi/__init__.py``):
+Now you can use your api connector (considering classes are added to ``dabeplech/__init__.py``):
 
 .. code-block:: python
 
-    from bioapi import AwesomebioinfoGenesAPI
+    from dabeplech import AwesomebioinfoGenesAPI
 
     api = AwesomebioinfoGenesAPI()
 
@@ -135,7 +135,7 @@ Adding an API based on a Parser
 There is not automatic way to help you use your parsers while adding an API connector using a
 parser to structure the response into JSON.
 
-At the moment, please refer to the ``bioapi.kegg`` module for examples using parsers.
+At the moment, please refer to the ``dabeplech.kegg`` module for examples using parsers.
 
 .. Note::
     An more abstracted way of dealing with parser will be extracted in the future when needed.

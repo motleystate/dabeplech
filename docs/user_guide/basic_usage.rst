@@ -15,7 +15,7 @@ By default, the result is returned using the pydantic model.
 
 .. code-block:: python
 
-   from bioapi import KEGGAPI
+   from dabeplech import KEGGAPI
 
    api = KEGGAPI()
    kegg_entry = api.get("K00135")
@@ -30,7 +30,7 @@ If you prefer you can instead get a python dict with the ``get_model=False`` arg
 
 .. code-block:: python
 
-   from bioapi import KEGGAPI
+   from dabeplech import KEGGAPI
 
    api = KEGGAPI()
    kegg_entry = api.get("K00135", get_model=False)

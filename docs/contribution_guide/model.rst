@@ -18,7 +18,7 @@ for more details.
     a tool that generates, in a semi-automatic manner the base structure for the
     response based on a openapi specification.
 
-All the models are present in the ``models`` module of the bioapi library.
+All the models are present in the ``models`` module of the dabeplech library.
 
 Describing your response should be pretty straightforward and is only a matter
 of defining the structure of it. Let's have a look at a simple example.

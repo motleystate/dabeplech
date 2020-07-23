@@ -1,8 +1,8 @@
 import logging
 
-from bioapi.models.kegg.orthology import KeggOrthologyListModel
-from bioapi.models.kegg.pathway import KeggPathwayListModel
-from bioapi.parsers.base import BaseListParser
+from dabeplech.models.kegg.orthology import KeggOrthologyListModel
+from dabeplech.models.kegg.pathway import KeggPathwayListModel
+from dabeplech.parsers.base import BaseListParser
 
 logging.basicConfig()
 logger = logging.getLogger()

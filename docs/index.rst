@@ -1,7 +1,7 @@
-Welcome to BioAPI's documentation!
-==================================
+Welcome to dabeplech's documentation!
+=====================================
 
-BioAPI is a modern and light library to perform requests to different bioinformatics APIs with Python 3.6+.
+dabeplech is a modern and light library to perform requests to different bioinformatics APIs with Python 3.6+.
 The key features of the library are the following:
 
 - **Accessible**: Designed to be easy to use.
@@ -16,14 +16,14 @@ Installation
 
 .. code-block:: bash
 
-   pip install bioapi
+   pip install dabeplech
 
 Example
 """""""
 
 .. code-block:: python
 
-   from bioapi import KEGGAPI
+   from dabeplech import KEGGAPI
 
    api = KEGGAPI()
    kegg_entry = api.get("K00135")
@@ -35,10 +35,10 @@ Example
 ---------------
 
 .. toctree::
-    :caption: BioAPI
+    :caption: dabeplech
     :maxdepth: 1
 
-    why_bioapi
+    why_dabeplech
     contribution_guide/contributing
 
 .. toctree::

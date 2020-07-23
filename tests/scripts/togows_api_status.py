@@ -1,4 +1,4 @@
-from bioapi import TogoWSEntryAPI
+from dabeplech import TogoWSEntryAPI
 
 from utils import _format_print
 

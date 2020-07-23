@@ -1,8 +1,8 @@
 import os
 from unittest import TestCase
 
-from bioapi.parsers.kegg.list import KeggPathwayListParser
-from bioapi.parsers.kegg.pathway import KeggPathwayParser
+from dabeplech.parsers.kegg.list import KeggPathwayListParser
+from dabeplech.parsers.kegg.pathway import KeggPathwayParser
 
 
 class TestKeggPathwayParser(TestCase):

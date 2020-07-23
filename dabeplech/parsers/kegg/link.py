@@ -1,8 +1,8 @@
 import logging
 from collections import defaultdict
 
-from bioapi.models.kegg.link import KeggLinksModel
-from bioapi.parsers.base import BaseParser
+from dabeplech.models.kegg.link import KeggLinksModel
+from dabeplech.parsers.base import BaseParser
 
 logging.basicConfig()
 logger = logging.getLogger()

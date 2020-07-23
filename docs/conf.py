@@ -1,11 +1,11 @@
 import os
 import sys
 
-from bioapi import __version__
+from dabeplech import __version__
 
-# from bioapi import version
+# from dabeplech import version
 
-sys.path.insert(0, os.path.abspath('../../bioapi'))
+sys.path.insert(0, os.path.abspath('../../dabeplech'))
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -29,7 +29,7 @@ sys.path.insert(0, os.path.abspath('../../bioapi'))
 # The master toctree document.
 master_doc = 'index'
 
-project = 'BioAPI'
+project = 'dabeplech'
 copyright = '2020, Kenzo-Hugo Hillion'
 author = 'Kenzo-Hugo Hillion'
 

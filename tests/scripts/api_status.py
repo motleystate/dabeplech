@@ -15,7 +15,7 @@ logger = logging.getLogger()
 
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description='Test the status of different endpoints supported by bioapi.')
+    parser = argparse.ArgumentParser(description='Test the status of different endpoints supported by dabeplech.')
     parser.add_argument('--verbose', action='store_true')
     parser.add_argument('--debug', action='store_true')
 

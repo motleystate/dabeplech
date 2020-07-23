@@ -2,7 +2,7 @@ from typing import List
 
 from pydantic import BaseModel
 
-from bioapi.models.kegg.references import KeggReferenceModel
+from dabeplech.models.kegg.references import KeggReferenceModel
 
 
 class BaseKeggModel(BaseModel):

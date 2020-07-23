@@ -1,12 +1,12 @@
-.. BioAPI
+.. dabeplech
 
-.. _why_bioapi:
+.. _why_dabeplech:
 
 ***********
-Why BioAPI?
+Why dabeplech?
 ***********
 
-The main motivation behind BioAPI is to provide a simple way to query bioinformatics API.
+The main motivation behind dabeplech is to provide a simple way to query bioinformatics API.
 
 It is also designed in a way to ease any contributions and try to keep its structure as simple as possible.
 

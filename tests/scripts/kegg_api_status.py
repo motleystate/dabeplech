@@ -1,4 +1,4 @@
-from bioapi import KEGGAPI
+from dabeplech import KEGGAPI
 
 from utils import _format_print
 

@@ -24,7 +24,7 @@ jobs:
         pip install .
     - name: Generate coverage report
       run: |
-        pytest --cov ./bioapi --cov-report xml --cov-report term
+        pytest --cov ./dabeplech --cov-report xml --cov-report term
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:

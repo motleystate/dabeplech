@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve bioapi and fix bugs
+about: Create a report to help us improve dabeplech and fix bugs
 title: ''
 labels: bug
 assignees: ''
