@@ -2,18 +2,22 @@ from typing import List
 
 from pydantic import BaseModel, Field
 
-from .base import BaseKeggModel, LightBaseKeggModel
+from bioapi.models.kegg.dblinks import DBLinksModel
+from .base import BaseKeggModel
 
 
 class KeggOrthologyModel(BaseKeggModel):
     entry_id: str = Field(regex=r"^K\d{5}$")
     definition: str = None
+    modules: dict = None
     ec_numbers: List[str] = None  # noqa
     pathways: dict = None
     genes: dict = None
+    dblinks: DBLinksModel = None
+    diseases: dict = None
 
 
-class LightKeggOrthologyModel(LightBaseKeggModel):
+class LightKeggOrthologyModel(BaseKeggModel):
     definition: str = None
     ec_numbers: List[str] = None  # noqa
 

@@ -4,7 +4,8 @@ from urllib.parse import urljoin
 from bioapi.base import BaseAPI
 from bioapi.parsers.kegg import (
     KeggOrthologyParser, KeggOrthologyListParser,
-    KeggPathwayParser, KeggPathwayListParser, KeggLinkParser
+    KeggPathwayParser, KeggPathwayListParser, KeggLinkParser,
+    KeggModuleParser, KeggModuleListParser
 )
 
 logging.basicConfig()
@@ -21,10 +22,12 @@ class KEGGAPI(BaseAPI):
     LIST_PARSER: dict = {
         'ko': KeggOrthologyListParser,
         'pathway': KeggPathwayListParser,
+        'module': KeggModuleListParser,
     }
     GET_PARSER: dict = {
         'ko': KeggOrthologyParser,
         'pathway': KeggPathwayParser,
+        'module': KeggModuleParser,
     }
 
     def _check_db(self, database: str):

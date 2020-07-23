@@ -3,6 +3,11 @@
 Description of the Pull Request content. *Especially give details for what changed since the description
 done in the related issue.*
 
+#### Changelogs
+
+* Change 1
+* Change 2
+
 #### Issue(s)
 
 *Indicates which issue is related to this Pull Request*

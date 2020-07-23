@@ -35,7 +35,7 @@ class TestKeggPathwayParser(TestCase):
         # Keys of dict
         self.assertIn('ko00020', tested_entry.related_pathways.keys())
         self.assertIn('C00022', tested_entry.compounds.keys())
-        self.assertIn('K14454', tested_entry.orthologs.keys())
+        self.assertIn('K14454', tested_entry.orthologies.keys())
         self.assertIn('ko00350', tested_entry.pathway_maps.keys())
 
     def test_parsing_map(self):
