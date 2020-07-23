@@ -16,9 +16,11 @@ v0.0.5
 
 * ``FIND`` works and gives a ``json`` output for pathway and ko. It can be used using ``.find(database, query)`` (https://github.com/motleystate/dabeplech/pull/16)
 * ``LINK`` has been splitted in two methods (there are using the same endpoint, but having two different methods make more sense). (https://github.com/motleystate/dabeplech/pull/16)
-    * ``link_db(target_db, source_db)``: allows retrieval of database to database cross-references
-    * ``link_entries(target_db, dbentries)``: allows retrieval for a selected number of entries
-* replace `get_all()` by ``list()`` for LIST operation on KEGG API
+
+  - ``link_db(target_db, source_db)``: allows retrieval of database to database cross-references
+  - ``link_entries(target_db, dbentries)``: allows retrieval for a selected number of entries
+
+* replace ``get_all()`` by ``list()`` for LIST operation on KEGG API
 * Add model description and API for KEGG module (https://github.com/motleystate/dabeplech/pull/17)
 * change name to ``dabeplech``
 
