@@ -9,6 +9,7 @@ import sys
 
 from kegg_api_status import test_keggapi
 from togows_api_status import test_togowsentryapi
+from pdbe_api_status import test_pdbeapi
 
 logging.basicConfig()
 logger = logging.getLogger()
@@ -33,6 +34,7 @@ def run():
         logger.setLevel(logging.DEBUG)
     test_togowsentryapi()
     test_keggapi()
+    test_pdbeapi()
 
 
 if __name__ == "__main__":
