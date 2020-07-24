@@ -59,7 +59,7 @@ Here is the code that we write to add this API in ``dabeplech/awesomebioinfo.py`
     class AwesomebioinfoGenesAPI(AwesomebioinfoAPI):
         ROUTE = "genes/"
 
-    class AwesomebioinfoOrganismsAPI((AwesomebioinfoAPI):
+    class AwesomebioinfoOrganismsAPI(AwesomebioinfoAPI):
         ROUTE = "organisms/"
 
 .. warning::
