@@ -8,5 +8,8 @@ from dabeplech.models.kegg.references import KeggReferenceModel
 class BaseKeggModel(BaseModel):
     entry_id: str
     names: List[str]
+
+
+class BaseKeggWithRefModel(BaseKeggModel):
     references: List[KeggReferenceModel] = None
 

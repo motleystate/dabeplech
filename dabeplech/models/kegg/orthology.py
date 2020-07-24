@@ -3,10 +3,10 @@ from typing import List
 from pydantic import BaseModel, Field
 
 from dabeplech.models.kegg.dblinks import DBLinksModel
-from .base import BaseKeggModel
+from .base import BaseKeggModel, BaseKeggWithRefModel
 
 
-class KeggOrthologyModel(BaseKeggModel):
+class KeggOrthologyModel(BaseKeggWithRefModel):
     entry_id: str = Field(regex=r"^K\d{5}$")
     definition: str = None
     modules: dict = None

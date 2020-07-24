@@ -2,10 +2,10 @@ from typing import List
 
 from pydantic import BaseModel, Field
 
-from .base import BaseKeggModel
+from .base import BaseKeggModel, BaseKeggWithRefModel
 
 
-class KeggModuleModel(BaseKeggModel):
+class KeggModuleModel(BaseKeggWithRefModel):
     entry_id: str = Field(regex=r"^M\d{5}$")
     definition: str = None
     orthologies: dict = None

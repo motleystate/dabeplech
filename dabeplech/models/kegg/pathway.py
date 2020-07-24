@@ -3,10 +3,10 @@ from typing import List
 from pydantic import BaseModel, Field
 
 from dabeplech.models.kegg.dblinks import DBLinksModel
-from .base import BaseKeggModel
+from .base import BaseKeggModel, BaseKeggWithRefModel
 
 
-class KeggPathwayModel(BaseKeggModel):
+class KeggPathwayModel(BaseKeggWithRefModel):
     entry_id: str = Field(regex=r'^(map|ko)\d{5}$')
     description: str = None
     classes: List[str] = None
