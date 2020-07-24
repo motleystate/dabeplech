@@ -1,11 +1,11 @@
 from typing import List
 
-from pydantic import BaseModel, Field
+from pydantic import Field
 
-from .base import BaseKeggModel
+from .base import BaseKeggListModel, BaseKeggWithRefModel
 
 
-class KeggModuleModel(BaseKeggModel):
+class KeggModuleModel(BaseKeggWithRefModel):
     entry_id: str = Field(regex=r"^M\d{5}$")
     definition: str = None
     orthologies: dict = None
@@ -17,5 +17,5 @@ class KeggModuleModel(BaseKeggModel):
     comment: str = None
 
 
-class KeggModuleListModel(BaseModel):
-    entries: List[BaseKeggModel]
+class KeggModuleListModel(BaseKeggListModel):
+    pass

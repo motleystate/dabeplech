@@ -1,12 +1,12 @@
 from typing import List
 
-from pydantic import BaseModel, Field
+from pydantic import Field
 
 from dabeplech.models.kegg.dblinks import DBLinksModel
-from .base import BaseKeggModel
+from .base import BaseKeggListModel, BaseKeggWithRefModel
 
 
-class KeggPathwayModel(BaseKeggModel):
+class KeggPathwayModel(BaseKeggWithRefModel):
     entry_id: str = Field(regex=r'^(map|ko)\d{5}$')
     description: str = None
     classes: List[str] = None
@@ -20,5 +20,5 @@ class KeggPathwayModel(BaseKeggModel):
     diseases: dict = None
 
 
-class KeggPathwayListModel(BaseModel):
-    entries: List[BaseKeggModel]
+class KeggPathwayListModel(BaseKeggListModel):
+    pass
