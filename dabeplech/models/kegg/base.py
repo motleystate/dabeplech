@@ -10,6 +10,9 @@ class BaseKeggModel(BaseModel):
     names: List[str]
 
 
+class BaseKeggListModel(BaseModel):
+    entries: List[BaseKeggModel]
+
+
 class BaseKeggWithRefModel(BaseKeggModel):
     references: List[KeggReferenceModel] = None
-

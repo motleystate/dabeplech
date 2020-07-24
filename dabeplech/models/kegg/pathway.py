@@ -1,9 +1,9 @@
 from typing import List
 
-from pydantic import BaseModel, Field
+from pydantic import Field
 
 from dabeplech.models.kegg.dblinks import DBLinksModel
-from .base import BaseKeggModel, BaseKeggWithRefModel
+from .base import BaseKeggListModel, BaseKeggWithRefModel
 
 
 class KeggPathwayModel(BaseKeggWithRefModel):
@@ -20,5 +20,5 @@ class KeggPathwayModel(BaseKeggWithRefModel):
     diseases: dict = None
 
 
-class KeggPathwayListModel(BaseModel):
-    entries: List[BaseKeggModel]
+class KeggPathwayListModel(BaseKeggListModel):
+    pass

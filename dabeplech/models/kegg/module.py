@@ -1,8 +1,8 @@
 from typing import List
 
-from pydantic import BaseModel, Field
+from pydantic import Field
 
-from .base import BaseKeggModel, BaseKeggWithRefModel
+from .base import BaseKeggListModel, BaseKeggWithRefModel
 
 
 class KeggModuleModel(BaseKeggWithRefModel):
@@ -17,5 +17,5 @@ class KeggModuleModel(BaseKeggWithRefModel):
     comment: str = None
 
 
-class KeggModuleListModel(BaseModel):
-    entries: List[BaseKeggModel]
+class KeggModuleListModel(BaseKeggListModel):
+    pass
