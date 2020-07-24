@@ -68,6 +68,17 @@ Here is the code that we write to add this API in ``dabeplech/awesomebioinfo.py`
 
 .. _contrib_api:
 
+Once this module has been created, add it to the ``dabeplech/__init__.py`` file so that it can be imported.
+In this case, the code added at the bottom of this file would be:
+
+.. code-block:: python
+
+    from .pdbe import ( #noqa
+        AwesomebioinfoAPI,
+        AwesomebioinfoGenesAPI,
+        AwesomebioinfoOrganismsAPI,
+    )
+
 Adding an API returning JSON
 ----------------------------
 
