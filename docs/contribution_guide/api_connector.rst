@@ -111,7 +111,7 @@ and organisms, but also retrieve an item based on its ID. The code becomes:
     class AwesomebioinfoGenesAPI(AwesomebioinfoAPI):
         ROUTE = "genes/"
 
-    class AwesomebioinfoOrganismsAPI((AwesomebioinfoAPI):
+    class AwesomebioinfoOrganismsAPI(AwesomebioinfoAPI):
         ROUTE = "organisms/"
 
 Now you can use your api connector (considering classes are added to ``dabeplech/__init__.py``):
