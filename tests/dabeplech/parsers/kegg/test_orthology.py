@@ -48,3 +48,12 @@ class TestKeggOrthologyListParser(TestCase):
         self.assertEqual(tested_entry.entry_id, 'K00003')
         self.assertIn('hom', tested_entry.names)
         self.assertEqual(tested_entry.definition, 'homoserine dehydrogenase')
+
+    def test_empty_parsing(self):
+        input_path = os.path.join(os.path.dirname(__file__), 'files/empty_list.txt')
+        test_file = open(input_path, 'r')
+        test_txt = test_file.read()
+        test_parser = KeggOrthologyListParser(test_txt)
+        test_parser.parse()
+        tested_model = test_parser.validated_model
+        self.assertEqual(len(tested_model.entries), 0)
