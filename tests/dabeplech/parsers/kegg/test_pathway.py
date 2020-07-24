@@ -85,3 +85,6 @@ class TestKeggPathwayListParser(TestCase):
         tested_entry = tested_model.entries[2]
         self.assertEqual(tested_entry.entry_id, 'map00030')
         self.assertIn('Pentose phosphate pathway', tested_entry.names)
+        # Test entry has only expected
+        for k in vars(tested_entry).keys():
+            self.assertIn(k, ['names', 'entry_id'])

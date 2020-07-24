@@ -48,6 +48,9 @@ class TestKeggOrthologyListParser(TestCase):
         self.assertEqual(tested_entry.entry_id, 'K00003')
         self.assertIn('hom', tested_entry.names)
         self.assertEqual(tested_entry.definition, 'homoserine dehydrogenase')
+        # Test entry has only expected
+        for k in vars(tested_entry).keys():
+            self.assertIn(k, ['names', 'entry_id', 'definition', 'ec_numbers'])
 
     def test_empty_parsing(self):
         input_path = os.path.join(os.path.dirname(__file__), 'files/empty_list.txt')

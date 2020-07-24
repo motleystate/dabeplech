@@ -53,3 +53,6 @@ class TestKeggModuleListParser(TestCase):
         tested_entry = tested_model.entries[2]
         self.assertEqual(tested_entry.entry_id, 'M00003')
         self.assertIn('Gluconeogenesis', tested_entry.names)
+        # Test entry has only expected
+        for k in vars(tested_entry).keys():
+            self.assertIn(k, ['names', 'entry_id'])
