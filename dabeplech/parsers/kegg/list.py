@@ -8,7 +8,26 @@ logging.basicConfig()
 logger = logging.getLogger()
 
 
-class KeggOrthologyListParser(BaseListParser):
+class BaseKeggListParser(BaseListParser):
+
+    def _parse_line(self, line):
+        elements = line.split(maxsplit=1)
+        entry_id = elements[0].split(':')[1]
+        names = elements[1].split(';')[0].split(',')
+        names = [name.strip() for name in names]
+        return {
+            'entry_id': entry_id,
+            'names': names,
+        }
+
+    def parse(self):
+        for line in self.lines:
+            if not line.strip():
+                continue
+            self.parsed_content.append(self._parse_line(line))
+
+
+class KeggOrthologyListParser(BaseKeggListParser):
     """
     Parser for list of KEGG ko from KEGG API (http://rest.kegg.jp/list/ko).
     """
@@ -34,48 +53,16 @@ class KeggOrthologyListParser(BaseListParser):
             'ec_numbers': ec_numbers
         }
 
-    def parse(self):
-        for line in self.lines:
-            self.parsed_content.append(self._parse_line(line))
 
-
-class KeggPathwayListParser(BaseListParser):
+class KeggPathwayListParser(BaseKeggListParser):
     """
     Parser for list of KEGG pathways (map) from KEGG API (http://rest.kegg.jp/list/pathway).
     """
     model = KeggPathwayListModel
 
-    def _parse_line(self, line):
-        elements = line.split(maxsplit=1)
-        entry_id = elements[0].split(':')[1]
-        names = elements[1].split(';')[0].split(',')
-        names = [name.strip() for name in names]
-        return {
-            'entry_id': entry_id,
-            'names': names,
-        }
 
-    def parse(self):
-        for line in self.lines:
-            self.parsed_content.append(self._parse_line(line))
-
-
-class KeggModuleListParser(BaseListParser):
+class KeggModuleListParser(BaseKeggListParser):
     """
     Parser for list of KEGG modules (M) from KEGG API (http://rest.kegg.jp/list/module).
     """
     model = KeggPathwayListModel
-
-    def _parse_line(self, line):
-        elements = line.split(maxsplit=1)
-        entry_id = elements[0].split(':')[1]
-        names = elements[1].split(';')[0].split(',')
-        names = [name.strip() for name in names]
-        return {
-            'entry_id': entry_id,
-            'names': names,
-        }
-
-    def parse(self):
-        for line in self.lines:
-            self.parsed_content.append(self._parse_line(line))
