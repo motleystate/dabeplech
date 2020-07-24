@@ -11,6 +11,12 @@ Summary of developments of dabeplech library.
 v0.0
 ====
 
+v0.0.6
+------
+
+* LIST of entries described in KEGG models only contains the necessary fields (https://github.com/motleystate/dabeplech/pull/20)
+* deal with empty responses (`200`) from `FIND` operation on KEGG API (https://github.com/motleystate/dabeplech/pull/19)
+
 v0.0.5
 ------
 
