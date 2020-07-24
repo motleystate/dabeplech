@@ -59,7 +59,7 @@ Here is the code that we write to add this API in ``dabeplech/awesomebioinfo.py`
     class AwesomebioinfoGenesAPI(AwesomebioinfoAPI):
         ROUTE = "genes/"
 
-    class AwesomebioinfoOrganismsAPI((AwesomebioinfoAPI):
+    class AwesomebioinfoOrganismsAPI(AwesomebioinfoAPI):
         ROUTE = "organisms/"
 
 .. warning::
@@ -67,6 +67,17 @@ Here is the code that we write to add this API in ``dabeplech/awesomebioinfo.py`
     requests. This question is adressed below.
 
 .. _contrib_api:
+
+Once this module has been created, add it to the ``dabeplech/__init__.py`` file so that it can be imported.
+In this case, the code added at the bottom of this file would be:
+
+.. code-block:: python
+
+    from .pdbe import ( #noqa
+        AwesomebioinfoAPI,
+        AwesomebioinfoGenesAPI,
+        AwesomebioinfoOrganismsAPI,
+    )
 
 Adding an API returning JSON
 ----------------------------
@@ -111,7 +122,7 @@ and organisms, but also retrieve an item based on its ID. The code becomes:
     class AwesomebioinfoGenesAPI(AwesomebioinfoAPI):
         ROUTE = "genes/"
 
-    class AwesomebioinfoOrganismsAPI((AwesomebioinfoAPI):
+    class AwesomebioinfoOrganismsAPI(AwesomebioinfoAPI):
         ROUTE = "organisms/"
 
 Now you can use your api connector (considering classes are added to ``dabeplech/__init__.py``):
