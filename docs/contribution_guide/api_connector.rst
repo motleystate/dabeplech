@@ -73,7 +73,7 @@ In this case, the code added at the bottom of this file would be:
 
 .. code-block:: python
 
-    from .pdbe import ( #noqa
+    from .awesomebioinfo import ( #noqa
         AwesomebioinfoAPI,
         AwesomebioinfoGenesAPI,
         AwesomebioinfoOrganismsAPI,
