@@ -1,19 +1,20 @@
-from dabeplech import PDBeAPI
+from dabeplech import PDBeAPI, PDBeUniprotMappingAPI, PDBePFAMMappingAPI
 
 from utils import _format_print
 
 
 def _expected_working_pdbe():
     tests = [
-        ('Uniprot Mappings', 'mappings/uniprot/3u85'),
-        ('PFAM Mappings', 'mappings/pfam/3u85'),
+        ('Uniprot Mappings', '3u85', PDBeUniprotMappingAPI),
+        ('PFAM Mappings', '3u85', PDBePFAMMappingAPI),
     ]
     for i in tests:
         db = i[0]
         entry_id = i[1]
-        print(f"Test getting {entry_id} from {db} database from base URL: {PDBeAPI.BASE_URL}:")
+        api_connector = i[2]
+        api = api_connector()
+        print(f"Test getting {entry_id} from {db} database from base URL: {api.BASE_URL}:")
         try:
-            api = PDBeAPI()
             content = api.get(entry_id)  # noqa
             print(_format_print("Status", "OK", "green"))
             if content:
@@ -28,15 +29,17 @@ def _expected_working_pdbe():
 
 def _expected_not_working_pdbe():
     tests = [
-        ('Uniprot Mappings', 'mappings/uniprot/Xu85'),
-        ('PFAM Mappings', 'mappings/pfam/Xu85'),
+        ('Uniprot Mappings', 'Xu85', PDBeUniprotMappingAPI),
+        ('PFAM Mappings', 'Xu85', PDBePFAMMappingAPI),
     ]
     for i in tests:
         db = i[0]
         entry_id = i[1]
-        print(f"Test getting {entry_id} from {db} database from base URL: {PDBeAPI.BASE_URL}:")
+        api_connector = i[2]
+        api = api_connector()
+        print(f"Test getting {entry_id} from {db} database from base URL: {api.BASE_URL}:")
         try:
-            api = PDBeAPI()
+            api = api_connector()
             content = api.get(entry_id)  # noqa
             print(_format_print("Status", "OK", "red"))
         except Exception:
