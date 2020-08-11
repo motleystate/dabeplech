@@ -10,7 +10,7 @@ from .metagenedb import (  # noqa
     MetageneDBCatalogTaxonomyAPI,
     MetageneDBCatalogFunctionAPI
 )
-from .pdbe import ( #noqa
+from .pdbe import (  # noqa
     PDBeAPI,
     PDBeUniprotMappingAPI,
     PDBePFAMMappingAPI,

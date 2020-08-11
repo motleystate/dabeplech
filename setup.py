@@ -11,7 +11,8 @@ setup(
     install_requires=[
         'pydantic==1.5.1',
         'requests==2.23.0',
-        'colored==1.4.2'
+        'colored==1.4.2',
+        'beautifulsoup4==4.9.1'
     ],
     packages=find_packages()
 )

@@ -1,4 +1,4 @@
-from dabeplech import PDBeAPI, PDBeUniprotMappingAPI, PDBePFAMMappingAPI
+from dabeplech import PDBeUniprotMappingAPI, PDBePFAMMappingAPI
 
 from utils import _format_print
 
