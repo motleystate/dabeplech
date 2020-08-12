@@ -35,7 +35,7 @@ Example
 ---------------
 
 .. toctree::
-    :caption: dabeplech
+    :caption: Dabeplech
     :maxdepth: 1
 
     why_dabeplech
@@ -48,6 +48,7 @@ Example
     user_guide/installation
     user_guide/basic_usage
     user_guide/supported_api
+    user_guide/scrapped_pages
 
 .. toctree::
     :caption: Contribution guide

@@ -1,0 +1,29 @@
+import requests
+
+from dabeplech.scrappers.ncbi_taxonomy.taxonomy import NCBITaxonomyScrapper
+
+class NCBITaxonomyScrapAPI:
+    """
+    Scrap NCBI taxonomy pages to return information and mimic API behaviour to retrieve useful
+    information such as hierarchy of taxonomy.
+    """
+    HEADERS = {
+        'Content-type': 'application/json',
+        'Accept': '*/*'
+    }
+    SESSION = requests.Session
+
+    def __init__(self):
+        self.last_url_requested = None
+        self.session = self.SESSION()
+        self.session.headers.update(self.HEADERS)
+
+    def get(self, tax_id: int, get_model: bool = True):
+        full_url = f"https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id={tax_id}&mode=info"
+        response = self.session.get(full_url)
+        self.last_url_requested = full_url
+        response.raise_for_status()
+        scrapper = NCBITaxonomyScrapper(response.content)
+        if get_model:
+            return scrapper.validated_entry
+        return scrapper.validated_entry.dict()
