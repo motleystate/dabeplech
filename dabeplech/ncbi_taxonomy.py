@@ -9,7 +9,7 @@ class NCBITaxonomyScrapAPI:
     information such as hierarchy of taxonomy.
     """
     HEADERS = {
-        'Content-type': 'application/json',
+        'Content-type': 'text/html',
         'Accept': '*/*'
     }
     SESSION = requests.Session
