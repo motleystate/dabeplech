@@ -2,6 +2,7 @@ import requests
 
 from dabeplech.scrappers.ncbi_taxonomy.taxonomy import NCBITaxonomyScrapper
 
+
 class NCBITaxonomyScrapAPI:
     """
     Scrap NCBI taxonomy pages to return information and mimic API behaviour to retrieve useful
@@ -24,6 +25,8 @@ class NCBITaxonomyScrapAPI:
         self.last_url_requested = full_url
         response.raise_for_status()
         scrapper = NCBITaxonomyScrapper(response.content)
+        if not scrapper.result_found():
+            raise requests.exceptions.HTTPError(f"{tax_id} not found in NCBI taxonomy db.")
         if get_model:
             return scrapper.validated_entry
         return scrapper.validated_entry.dict()

@@ -11,6 +11,14 @@ class NCBITaxonomyScrapper:
     def __init__(self, html_content: bytes):
         self.soup = BeautifulSoup(html_content, features="html.parser")
 
+    def result_found(self):
+        """
+        if <h1> is present in the page, it means an error message is returned
+        """
+        if self.soup.h1 is not None:
+            return False
+        return True
+
     @classmethod
     def extract_tax_id_from_url(self, url):
         qparams = url.split('?', maxsplit=1)[1]
@@ -20,8 +28,8 @@ class NCBITaxonomyScrapper:
 
     def retrieve_current_item(self):
         table_of_interest = self.soup.body.find_all('table')[3]
-        name = table_of_interest.a.text
-        tax_id = self.extract_tax_id_from_url(table_of_interest.a['href'])
+        name = table_of_interest.find_all('strong')[0].text
+        tax_id = table_of_interest.tr.td.text.split("Taxonomy ID:")[-1].split()[0]
         rank = table_of_interest.find_all('strong')[2].text
         current_item = {
             'rank': rank,
