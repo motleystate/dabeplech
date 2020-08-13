@@ -11,6 +11,11 @@ Summary of developments of dabeplech library.
 v0.1
 ====
 
+v0.1.1
+------
+
+* Fix bug and deal with variant of NCBI taxonomy item page (e.g. ``tax_id=12345``)
+
 v0.1.0
 ------
 
