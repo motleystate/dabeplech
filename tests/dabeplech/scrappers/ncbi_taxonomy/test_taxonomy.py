@@ -51,6 +51,21 @@ class TestNCBITaxonomyScrapper(TestCase):
         tested_dict = scrapper.retrieve_current_item()
         self.assertDictEqual(tested_dict, expected_dict)
 
+    def test_retrieve_current_item_variant_1(self):
+        """
+        Some entry has different display and more information, for instance tax_id 12345
+        """
+        file_path = os.path.join(os.path.dirname(__file__), 'data/tax_12345.html')
+        tax_file = open(file_path, "rb")
+        scrapper = NCBITaxonomyScrapper(tax_file)
+        expected_dict = {
+            'rank': 'species',
+            'tax_id': '12345',
+            'name': 'Bacillus virus GA1'
+        }
+        tested_dict = scrapper.retrieve_current_item()
+        self.assertDictEqual(tested_dict, expected_dict)
+
     def test_retrieve_hierarchy(self):
         scrapper = NCBITaxonomyScrapper(self.file)
         expected_list = [

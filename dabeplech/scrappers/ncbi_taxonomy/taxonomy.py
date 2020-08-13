@@ -30,8 +30,8 @@ class NCBITaxonomyScrapper:
     def retrieve_current_item(self):
         table_of_interest = self.soup.body.find_all('table')[3]
         name = table_of_interest.find_all('strong')[0].text
-        tax_id = table_of_interest.tr.td.text.split("Taxonomy ID:")[-1].split()[0]
-        rank = table_of_interest.find_all('strong')[2].text
+        tax_id = table_of_interest.tr.td.text.split("Taxonomy ID:", maxsplit=1)[-1].split()[0]
+        rank = table_of_interest.find_all('strong')[-2].text
         current_item = {
             'rank': rank,
             'tax_id': tax_id,
