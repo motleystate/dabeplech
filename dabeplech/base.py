@@ -28,7 +28,12 @@ class LISTMixin:
     Corresponds to a ``GET`` that retrieve all items
     """
 
-    def list(self, params=None):
+    def list(self, params: dict = None):
+        """
+        Perform GET request to the service
+
+        :param params: query params for the request
+        """
         response = self.session.get(self.url, params=params)
         self.last_url_requested = self.url
         response.raise_for_status()
@@ -40,7 +45,13 @@ class GETMixin:
     Corresponds to a ``GET`` that retrieve one item from its ID
     """
 
-    def get(self, entry_id, params=None):
+    def get(self, entry_id: str, params: dict = None):
+        """
+        Perform GET request to the service
+
+        :param entry_id: ID of the entry you want to retrieve
+        :param params: query params for the request
+        """
         full_url = urljoin(self.url, entry_id)
         response = self.session.get(full_url, params=params)
         self.last_url_requested = full_url
@@ -50,7 +61,12 @@ class GETMixin:
 
 class POSTMixin:
 
-    def post(self, data):
+    def post(self, data: dict):
+        """
+        Perform POST request to the service
+
+        :param data: data to send in the body of your POST
+        """
         response = self.session.post(f"{self.url}", json=data)
         self.last_url_requested = self.url
         response.raise_for_status()
@@ -59,7 +75,13 @@ class POSTMixin:
 
 class PUTMixin:
 
-    def put(self, data, entry_id=None):
+    def put(self, data: dict, entry_id: str = None):
+        """
+        Perform PUT request to the service
+
+        :param data: data to send in the body of your PUT
+        :param entry_id: ID of the entry you want to update
+        """
         if entry_id:
             full_url = urljoin(self.url, entry_id + '/')
         else:

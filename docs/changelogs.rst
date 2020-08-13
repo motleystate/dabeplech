@@ -8,6 +8,16 @@ Changelogs
 
 Summary of developments of dabeplech library.
 
+v0.1
+====
+
+v0.1.0
+------
+
+* Add scrapper for NCBI taxonomy (https://github.com/motleystate/dabeplech/pull/24)
+* Add ``NCBITaxonomyScrapAPI`` that mimics API behaviour to retrieve hierarchy information for a given ``tax_id`` (https://github.com/motleystate/dabeplech/pull/24)
+* add first PDBe REST endpoints (https://github.com/motleystate/dabeplech/pull/21)
+
 v0.0
 ====
 
