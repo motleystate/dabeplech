@@ -7,6 +7,7 @@ class NCBITaxonomyScrapper:
     """
     Scrapper of html response from NCBI taxonomy info page of a given tax_id
     """
+    model = NCBITaxonomyAPIModel
 
     def __init__(self, html_content: bytes):
         self.soup = BeautifulSoup(html_content, features="html.parser")
@@ -64,4 +65,4 @@ class NCBITaxonomyScrapper:
         """
         if getattr(self, 'entry', None) is None:
             self.scrap()
-        return NCBITaxonomyAPIModel(**self.entry)
+        return self.model(**self.entry)

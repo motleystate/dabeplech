@@ -1,3 +1,5 @@
+from typing import Union
+
 import requests
 
 from dabeplech.scrappers.ncbi_taxonomy.taxonomy import NCBITaxonomyScrapper
@@ -19,7 +21,11 @@ class NCBITaxonomyScrapAPI:
         self.session = self.SESSION()
         self.session.headers.update(self.HEADERS)
 
-    def get(self, tax_id: int, get_model: bool = True):
+    def get(self, tax_id: int, get_model: bool = True) -> Union[NCBITaxonomyScrapper.model, dict]:
+        """
+        :param tax_id: NCBI taxonomy ID to retrieve data from
+        :param get_model: return pydantic model (return dict if False)
+        """
         full_url = f"https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id={tax_id}&mode=info"
         response = self.session.get(full_url)
         self.last_url_requested = full_url

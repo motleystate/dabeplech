@@ -58,6 +58,7 @@ Example
     contribution_guide/flow
     contribution_guide/model
     contribution_guide/parser
+    contribution_guide/scrapper
     contribution_guide/api_connector
     contribution_guide/docs
     contribution_guide/code_of_conduct
@@ -67,6 +68,7 @@ Example
     :maxdepth: 1
 
     api_docs/api_services
+    api_docs/scrap_api
 
 .. toctree::
     :caption: Changelogs
