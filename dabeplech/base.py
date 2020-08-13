@@ -3,7 +3,7 @@ from urllib.parse import urljoin
 import requests
 
 
-class BaseAPI(object):
+class BaseAPI:
     BASE_URL = ''
     ROUTE = ''
     HEADERS = {

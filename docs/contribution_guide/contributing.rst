@@ -24,9 +24,7 @@ General rules
 Adding a new API connector
 ==========================
 
-For the moment, we identify two different scenarios when adding a new API connector,
-either the API already return some JSON format or the API return another format and needs
-some parsing and formatting to stick to the openapi standard.
+For the moment, we identify three different scenarios when adding a new API connector:
 
 API already returning JSON
 --------------------------
@@ -42,4 +40,12 @@ API returning different format
 1. :ref:`contrib_model`
 2. :ref:`contrib_parser`
 3. :ref:`contrib_api_parser`
+4. :ref:`contrib_docs`
+
+Build API connector from scrapping
+----------------------------------
+
+1. :ref:`contrib_model`
+2. :ref:`contrib_scrapper`
+3. :ref:`contrib_api_scrapper`
 4. :ref:`contrib_docs`

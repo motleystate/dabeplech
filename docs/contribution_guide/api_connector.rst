@@ -66,8 +66,6 @@ Here is the code that we write to add this API in ``dabeplech/awesomebioinfo.py`
     As it is, your connectors won't work since no methods are defined to perform
     requests. This question is adressed below.
 
-.. _contrib_api:
-
 Once this module has been created, add it to the ``dabeplech/__init__.py`` file so that it can be imported.
 In this case, the code added at the bottom of this file would be:
 
@@ -78,6 +76,8 @@ In this case, the code added at the bottom of this file would be:
         AwesomebioinfoGenesAPI,
         AwesomebioinfoOrganismsAPI,
     )
+
+.. _contrib_api:
 
 Adding an API returning JSON
 ----------------------------
@@ -149,5 +149,15 @@ parser to structure the response into JSON.
 At the moment, please refer to the ``dabeplech.kegg`` module for examples using parsers.
 
 .. Note::
-    An more abstracted way of dealing with parser will be extracted in the future when needed.
+    A more abstracted way of dealing with parser will be extracted in the future when needed.
     The Kegg case being particular, it needs its own methods.
+
+.. _contrib_api_scrapper:
+
+Adding an API based on a Scrapper
+---------------------------------
+
+There is not automatic way to help you use your scappers while adding an API connector using a
+scrapper to structure the response into JSON.
+
+At the moment, please refer to the ``dabeplech.ncbi_taxonomy`` module for examples using scrappers.

@@ -1,0 +1,256 @@
+<html>
+  <head>
+    
+    <meta name="author" content="taxonomy">
+    <meta name="keywords" content="national center for biotechnology information, ncbi, national library of medicine, nlm, national institutes of health, nih, database, archive, bookshelf, pubmed, pubmed central, bioinformatics, biomedicine,taxonomy, organism, phylogeny, sequence, database">
+    <meta name="description" content="THE NCBI Taxonomy database allows browsing of the taxonomy tree, which contains a classification of organisms.">
+    <meta name="ncbi_app" content="taxonomy"/>
+    <meta name="ncbi_phid" content="03EE09D1F34085110000000000000001"/>
+    <meta name="log_op" content="pageview"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Global Alert message support -->
+    <meta name="galert_type" content="default"/>
+    <script type="text/javascript" src="/core/jquery/jquery-1.12.4.min.js">&#xA0;</script>
+    <script type="text/javascript">
+      jQuery.getScript("/core/alerts/alerts.js",
+      function () {
+        galert(['body > *:nth-child(1)'])
+      });
+    </script>
+    <link rel="stylesheet" href="//www.ncbi.nlm.nih.gov/corehtml/ncbi2.css">
+    <style>
+      fieldset {
+	border: 1px solid;
+      }
+      .subcat {
+	border-left: 1px solid;
+	border-bottom: 1px solid;
+        max-height: auto;
+        margin-top: 3px;
+	margin-bottom: 1px;
+        transition: max-height 0.2s ease-out;
+        overflow: hidden;
+      }
+      .nomrel {
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+        padding-left: 2px;
+      }
+      .nomrelfolded {
+        display: inline-block;
+        vertical-align: top;
+        max-height: auto;
+        text-align: left;
+        padding-left: 2px;
+      }
+      .nomrelfolded:after {
+        content: "\229e";
+      }
+      .nomrelopen {
+        display: inline-block;
+        vertical-align: top;
+        max-height: auto;
+        text-align: left;
+        padding-left: 2px;
+      }
+      .nomrelopen:after {
+        content: "\229f";
+      }
+      .subname {
+        display: inline-block;
+      }
+      .subord {
+        display: block;
+        margin-left: 50px;
+      }
+      .activef:after {
+        content: "\229f";
+      }
+      .activeo:after {
+        content: "\229e";
+      }
+      .citation {
+        display: block;
+        vertical-align: middle;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+      .citimage {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left;
+        float: left;
+      }
+      .citkey {
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+        margin-left: 5px;
+      }
+      .cittext {
+        display: block;
+        width 85%;
+        vertical-align: bottom;
+        text-align: left;
+      }
+      .biocoll_link {
+        text-decoration: none;
+        border-bottom: 1px dotted;
+        cursor:help;
+      }
+    </style>
+</head>
+
+  <body bgcolor="#FFFFFF" text="#000000" onLoad="document.form.name.focus();document.form.name.select();">
+    <form name=form action="wwwtax.cgi" method=post><INPUT TYPE=hidden NAME="mode" VALUE="Undef">
+    <!--  the header   --> 
+    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+      <tr> 
+	<td width="140"><a href="//www.ncbi.nlm.nih.gov"> <img src="//www.ncbi.nlm.nih.gov/corehtml/left.GIF" width="130" height="45" border="0" alt="Link to NCBI Front Page"></a></td>
+	<td valign="BOTTOM"><img src="/Taxonomy/taxonomyhome.html/html/taxonomylogo.gif" alt="Taxonomy Logo" border=0></td>
+      </tr>
+    </table>
+    <!--  the quicklinks bar   --> 
+      <table CLASS="TEXT" border="0" width="100%" cellspacing="0" cellpadding="3" bgcolor="#000000">
+	<tr CLASS="TEXT"  align="CENTER"> 
+	  <td width="11%"><a href="/gquery" class="BAR">Entrez</a></td>
+	  <td width="11%"><a href="/pubmed" class="BAR">PubMed</a></td>
+	  <td width="11%"><a href="/nucleotide" class="BAR">Nucleotide</a></td>
+	  <td width="11%"><a href="/protein" class="BAR">Protein</a></td>
+	  <td width="11%"><a href="/genome" class="BAR">Genome</a></td>
+	  <td width="11%"><a href="/structure" class="BAR">Structure</a></td>
+	  <td width="11%"><a href="/pmc" class="BAR">PMC</a></td>
+	  <td width="11%"><a href="/taxonomy"  class="BAR">Taxonomy</a></td>
+	  <td width="11%"><a href="/biocollections" class="BAR">BioCollections</a></td>
+	</tr>
+      </table>
+	<!--  the query box   -->
+    <table CLASS="TEXT" border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#CCCCCC">
+      <tr>
+	<td><LABEL FOR=searchtxt ACCESSKEY=S>Search for </LABEL>
+              <INPUT ID=searchtxt TYPE=text name="name" value="" size=35>
+              <LABEL FOR=searchtype ACCESSKEY=A> as </LABEL><SELECT ID=searchtype NAME="srchmode">
+              <OPTION VALUE=1 SELECTED>complete name
+              <OPTION VALUE=2>wild card
+              <OPTION VALUE=3>token set
+              <OPTION VALUE=4>phonetic name
+              <OPTION VALUE=5>taxonomy id</SELECT>
+              <INPUT ID=keepstate TYPE=checkbox ALT="Lock search mode" name="keep" value=1 CHECKED><LABEL FOR=keepstate ACCESSKEY=L> lock </LABEL><input name="unlock" type="hidden" value="1">
+              &nbsp;&nbsp;&nbsp;<INPUT TYPE=submit NAME="a" VALUE="Go">
+              <input name="Clear" type=button value="Clear" onClick="this.form.name.value='';this.form.srchmode.selectedIndex=0;this.form.keep.checked=false;this.form.name.focus();">
+            
+        </td></tr>
+        <tr><td><INPUT TYPE=submit NAME=butt VALUE="Display">
+	    <INPUT TYPE=hidden NAME=mode value="Undef">
+	    <INPUT TYPE=hidden NAME="old_id" value="339588">
+	    <INPUT ID=typetxt TYPE=text name="lvl" value="3" size=3>
+	    <LABEL FOR=typetxt ACCESSKEY=E> levels </LABEL>
+	      <LABEL FOR=filter ACCESSKEY=F>using filter:&nbsp;
+	      <SELECT ID=filter NAME="filter">
+		<OPTION VALUE=""  SELECTED>none
+		<!-- OPTION VALUE="mapview_filter" >mapview -->
+		<OPTION VALUE="genome_filter" >has genome sequences
+		<!-- OPTION VALUE="genome_blast_filter" >genome BLAST -->
+		<!-- OPTION VALUE="trace_filter" >has trace records -->
+              </SELECT></td>
+      </tr>
+      
+    </table>
+<!--  the contents   -->
+  <title>Taxonomy browser (Peyssonnelia inamoena)</title>
+<table width="100%"><tr><td valign="top"><h2>Peyssonnelia inamoena</h2>
+Taxonomy ID: 339588<small> (for references in articles please use NCBI:txid339588)</small><br><fieldset><legend>current name</legend>
+<div><div><strong><i>Peyssonnelia</i> <i>inamoena</i></strong></div></div>
+</fieldset>
+NCBI BLAST name: <strong>red algae</strong><br>Rank: <strong>species</strong><br>Genetic code: <a href="/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG1">Translation table 1 (Standard)</a><br>Mitochondrial genetic code: <a href="/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG4">Translation table 4 (Mold Mitochondrial; Protozoan Mitochondrial; Coelenterate Mitochondrial; Mycoplasma; Spiroplasma)</a><br>Plastid genetic code: <a href="/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG11">Translation table 11 (Bacterial, Archaeal and Plant Plastid)</a><br><dl><dt><a href="wwwtax.cgi?mode=Info&amp;id=339588&amp;lvl=3&amp;keep=1&amp;srchmode=1&amp;unlock&amp;lin=s&amp;log_op=lineage_toggle">Lineage</a><em>( full )</em></dt>
+<dd><a ALT="no rank" href="wwwtax.cgi?mode=Undef&amp;id=131567&amp;lvl=3&amp;keep=1&amp;srchmode=1&amp;unlock" TITLE="no rank">cellular organisms</a>; <a ALT="superkingdom" href="wwwtax.cgi?mode=Undef&amp;id=2759&amp;lvl=3&amp;keep=1&amp;srchmode=1&amp;unlock" TITLE="superkingdom">Eukaryota</a>; <a ALT="phylum" href="wwwtax.cgi?mode=Undef&amp;id=2763&amp;lvl=3&amp;keep=1&amp;srchmode=1&amp;unlock" TITLE="phylum">Rhodophyta</a>; <a ALT="class" href="wwwtax.cgi?mode=Undef&amp;id=2806&amp;lvl=3&amp;keep=1&amp;srchmode=1&amp;unlock" TITLE="class">Florideophyceae</a>; <a ALT="subclass" href="wwwtax.cgi?mode=Undef&amp;id=2045261&amp;lvl=3&amp;keep=1&amp;srchmode=1&amp;unlock" TITLE="subclass">Rhodymeniophycidae</a>; <a ALT="order" href="wwwtax.cgi?mode=Undef&amp;id=28017&amp;lvl=3&amp;keep=1&amp;srchmode=1&amp;unlock" TITLE="order">Gigartinales</a>; <a ALT="family" href="wwwtax.cgi?mode=Undef&amp;id=173455&amp;lvl=3&amp;keep=1&amp;srchmode=1&amp;unlock" TITLE="family">Peyssonneliaceae</a>; <a ALT="genus" href="wwwtax.cgi?mode=Undef&amp;id=173456&amp;lvl=3&amp;keep=1&amp;srchmode=1&amp;unlock" TITLE="genus">Peyssonnelia</a></dd>
+</dl>
+</td>
+<td align="right" valign="top" width="20%"><table align="right" border="1" valign="top"><tr><td align="center" bgcolor="#ccccff" colspan="2" valign="center"><strong>&nbsp;&nbsp;&nbsp;Entrez records&nbsp;&nbsp;&nbsp;</strong></td></tr>
+<tr><td align="center" title="Entez database name" valign="bottom"><small>Database&nbsp;name</small></td>
+<td align="center" title="Entries linked directly to this taxon node in the taxonomy database" valign="bottom"><small>Direct&nbsp;links</small></td>
+</tr>
+<tr><td><span style="color:#0000A0">Nucleotide</span></td>
+<td align="right"><a href="/nuccore/?term=txid339588[Organism:noexp]"><span style="color:#0000A0">23</span></a></td>
+</tr>
+<tr><td><span style="color:#F00000">Protein</span></td>
+<td align="right"><a href="/protein/?term=txid339588[Organism:noexp]"><span style="color:#F00000">14</span></a></td>
+</tr>
+<tr><td><span style="color:#606090">Popset</span></td>
+<td align="right"><a href="/popset/?term=txid339588[Organism:noexp]"><span style="color:#606090">5</span></a></td>
+</tr>
+<tr><td><span style="color:#804000">PubMed&nbsp;Central</span></td>
+<td align="right"><a href="/pmc/?term=txid339588[Organism:noexp]&amp;pmfilter_Fulltext=off"><span style="color:#804000">2</span></a></td>
+</tr>
+<tr><td><span style="color:#C00000">Identical&nbsp;Protein&nbsp;Groups</span></td>
+<td align="right"><a href="/ipg/?term=txid339588[Organism:noexp]"><span style="color:#C00000">13</span></a></td>
+</tr>
+<tr><td><span style="color:#000080">Taxonomy</span></td>
+<td align="right"><a href="/taxonomy/?term=339588[uid]"><span style="color:#000080">1</span></a></td>
+</tr>
+</table></td>
+</tr></table>
+<h3>Information from sequence entries</h3>
+<h4><a href="wwwtax.cgi?mode=Info&amp;id=339588&amp;lvl=3&amp;keep=1&amp;srchmode=1&amp;unlock&amp;mod=1&amp;log_op=modifier_toggle#modif">Show organism modifiers</a></h4>
+<br><script type="text/javascript">var meta = document.createElement('meta');meta.name="ncbi_pdid";meta.content="info";document.getElementsByTagName('head')[0].appendChild(meta);</script>
+
+  <HR><P><strong>Disclaimer:</strong> The NCBI taxonomy database is not an authoritative
+  source for nomenclature or classification - please consult the
+  relevant scientific literature for the most reliable information.</P>
+  <br>Comments and questions to
+  <A HREF="mailto:info@ncbi.nlm.nih.gov">info@ncbi.nlm.nih.gov</A>
+  <BR><BR>
+  
+<!--  end of content  --> 
+  </form>
+<table bgcolor="#ccccff" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr  align="CENTER"> 
+    <td width="99"><a href="/Taxonomy/Browser/taxhelp_new.html" class="HELPBAR">[Help]</a></td>
+    <td width="99"><a href="/gquery" class="HELPBAR">[Search]</a></td>
+       <td width="99"> 
+        <a href="//www.nlm.nih.gov" class="HELPBAR">[NLM</a> 
+        <a href="//www.nih.gov" class="HELPBAR">NIH]</a>
+       </td>
+            <td width="99"><a href="//www.ncbi.nlm.nih.gov/About/disclaimer.html" class="HELPBAR">[Disclaimer]</a></td>
+    </tr>
+    </table>
+<script type="text/javascript">
+function listToggleF() {
+    var togres = this.classList.toggle("activef");
+    //var content = this.nextElementSibling;
+    var content = this.parentElement;
+    if (!togres){
+      content.style.maxHeight = this.scrollHeight;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+}
+function listToggleO() {
+    var togres = this.classList.toggle("activeo");
+    //var content = this.nextElementSibling;
+    var content = this.parentElement;
+    if (togres){
+      content.style.maxHeight = this.scrollHeight;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+}
+
+var coll = document.getElementsByClassName("nomrelfolded");
+
+for (var i = 0; i < coll.length; i++) {
+  var content = coll[i].parentElement;
+  content.style.maxHeight = coll[i].scrollHeight;
+  coll[i].style.content = "\229f";
+
+  coll[i].addEventListener("click", listToggleF);
+}
+coll = document.getElementsByClassName("nomrelopen");
+for (var i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", listToggleO);
+}
+</script>
+<script type="text/javascript" src="/portal/portal3rc.fcgi/rlib/js/InstrumentOmnitureBaseJS/InstrumentNCBIBaseJS/InstrumentPageStarterJS.js"></script>
+</body>
+</html>

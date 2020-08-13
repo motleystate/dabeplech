@@ -20,13 +20,3 @@ TogoWS
     :undoc-members:
     :special-members: __init__
     :show-inheritance:
-
-
-MetageneDB
-==========
-
-.. automodule:: dabeplech.metagenedb
-    :members:
-    :undoc-members:
-    :special-members: __init__
-    :show-inheritance:
