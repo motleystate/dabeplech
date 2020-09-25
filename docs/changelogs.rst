@@ -8,6 +8,14 @@ Changelogs
 
 Summary of developments of dabeplech library.
 
+v0.2
+====
+
+v0.2.0
+------
+
+* Add an endpoint to query the DOI (https://dx.doi.org) endpoint to retrieve information in the JSON format. (https://github.com/motleystate/dabeplech/pull/28)
+
 v0.1
 ====
 
