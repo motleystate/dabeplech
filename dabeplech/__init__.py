@@ -16,3 +16,6 @@ from .pdbe import (  # noqa
     PDBeUniprotMappingAPI,
     PDBePFAMMappingAPI,
 )
+from .doi import (  # noqa
+    DOIAPI,
+)

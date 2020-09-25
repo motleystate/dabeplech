@@ -12,7 +12,7 @@ KEGG
     :show-inheritance:
 
 
-TogoWS
+TogoS
 ======
 
 .. automodule:: dabeplech.togows
@@ -39,3 +39,12 @@ PDBe
     :members:
     :undoc-members:
     :show-inheritance:
+
+DOI
+===
+
+.. autoclass:: dabeplech.doi.DOIAPI
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members: get
