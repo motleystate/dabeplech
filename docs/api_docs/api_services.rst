@@ -12,7 +12,7 @@ KEGG
     :show-inheritance:
 
 
-TogoS
+TogoWS
 ======
 
 .. automodule:: dabeplech.togows
