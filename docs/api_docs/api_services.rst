@@ -48,3 +48,12 @@ DOI
     :undoc-members:
     :show-inheritance:
     :inherited-members: get
+
+HAL
+===
+
+.. autoclass:: dabeplech.hal.HALAPI
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members: get
