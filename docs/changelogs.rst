@@ -8,6 +8,14 @@ Changelogs
 
 Summary of developments of dabeplech library.
 
+v0.3
+====
+
+v0.3.0
+------
+
+* Add an endpoint to query the HAL (https://hal.archives-ouvertes.org) endpoint to retrieve information in the JSON format. (https://github.com/motleystate/dabeplech/pull/29)
+
 v0.2
 ====
 
