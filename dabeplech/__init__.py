@@ -19,3 +19,6 @@ from .pdbe import (  # noqa
 from .doi import (  # noqa
     DOIAPI,
 )
+from .hal import (  #noqa
+    HALAPI,
+)
