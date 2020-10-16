@@ -12,6 +12,7 @@ from togows_api_status import test_togowsentryapi
 from pdbe_api_status import test_pdbeapi
 from doi_api_status import test_doiapi
 from hal_api_status import test_halapi
+from ols_api_status import test_olsapi
 
 logging.basicConfig()
 logger = logging.getLogger()
@@ -39,6 +40,7 @@ def run():
     test_pdbeapi()
     test_doiapi()
     test_halapi()
+    test_olsapi()
 
 
 if __name__ == "__main__":
