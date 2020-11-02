@@ -57,3 +57,12 @@ HAL
     :undoc-members:
     :show-inheritance:
     :inherited-members: get
+
+OLS
+===
+
+.. autoclass:: dabeplech.ols.OLSAPI
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :inherited-members: get

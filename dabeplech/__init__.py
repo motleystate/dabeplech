@@ -22,3 +22,6 @@ from .doi import (  # noqa
 from .hal import (  #noqa
     HALAPI,
 )
+from .ols import (  #noqa
+    OLSAPI,
+)
