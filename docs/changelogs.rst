@@ -8,6 +8,16 @@ Changelogs
 
 Summary of developments of dabeplech library.
 
+v0.4
+====
+
+v0.4.0
+------
+
+* Add an endpoint to query Ontology Lookup Service  https://www.ebi.ac.uk/ols/index (https://github.com/motleystate/dabeplech/pull/30)
+
+    * a first ``get_term`` method to query by ontology term ID
+
 v0.3
 ====
 
@@ -54,8 +64,8 @@ v0.0.5
 * ``FIND`` works and gives a ``json`` output for pathway and ko. It can be used using ``.find(database, query)`` (https://github.com/motleystate/dabeplech/pull/16)
 * ``LINK`` has been splitted in two methods (there are using the same endpoint, but having two different methods make more sense). (https://github.com/motleystate/dabeplech/pull/16)
 
-  - ``link_db(target_db, source_db)``: allows retrieval of database to database cross-references
-  - ``link_entries(target_db, dbentries)``: allows retrieval for a selected number of entries
+    - ``link_db(target_db, source_db)``: allows retrieval of database to database cross-references
+    - ``link_entries(target_db, dbentries)``: allows retrieval for a selected number of entries
 
 * replace ``get_all()`` by ``list()`` for LIST operation on KEGG API
 * Add model description and API for KEGG module (https://github.com/motleystate/dabeplech/pull/17)
