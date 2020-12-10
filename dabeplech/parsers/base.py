@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import Dict, List, Union
 
 from pydantic import BaseModel
 
@@ -7,14 +8,15 @@ class BaseParser(ABC):
     """
     Base structure for parsers
     """
+
     model = BaseModel  # Pydantic model to describe the response
 
     def __init__(self, content_response: str):
         """
         :param content_response: content response from the API
         """
-        self.parsed_content = {}
-        self.lines = content_response.rstrip().split('\n')
+        self.parsed_content: Dict[str, Union[str, dict]] = {}
+        self.lines = content_response.rstrip().split("\n")
 
     @abstractmethod
     def parse(self):
@@ -37,14 +39,15 @@ class BaseListParser(ABC):
     """
     Base structure for parsers
     """
+
     model = BaseModel  # Pydantic model to describe the response
 
     def __init__(self, content_response: str):
         """
         :param content_response: content response from the API
         """
-        self.parsed_content = []
-        self.lines = content_response.rstrip().split('\n')
+        self.parsed_content: List[dict] = []
+        self.lines = content_response.rstrip().split("\n")
 
     @abstractmethod
     def parse(self):

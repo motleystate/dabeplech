@@ -28,11 +28,11 @@ class KeggReferenceParser:
         :param line: corresponding line
         :type line: STR
         """
-        if 'PMID' not in line:
+        if "PMID" not in line:
             logger.warning("no PMID for the reference. Corresponding line: %s", line)
             self._pubmed_id = None
         else:
-            self._pubmed_id = line.split()[1].split('PMID:')[-1].strip()
+            self._pubmed_id = line.split()[1].split("PMID:")[-1].strip()
 
     @property
     def authors(self):
@@ -40,7 +40,7 @@ class KeggReferenceParser:
 
     @authors.setter
     def authors(self, line):
-        all_authors = line.split(maxsplit=1)[-1].split(',')
+        all_authors = line.split(maxsplit=1)[-1].split(",")
         self._authors = [author.strip() for author in all_authors]
 
     @property
@@ -65,13 +65,13 @@ class KeggReferenceParser:
 
     @doi.setter
     def doi(self, line):
-        self._doi = line.split('DOI:', maxsplit=1)[-1]
+        self._doi = line.split("DOI:", maxsplit=1)[-1]
 
     def dict(self):
         return {
-            'pubmed_id': getattr(self, 'pubmed_id', None),
-            'authors': getattr(self, 'authors', None),
-            'title': getattr(self, 'title', None),
-            'journal': getattr(self, 'journal', None),
-            'doi': getattr(self, 'doi', None),
+            "pubmed_id": getattr(self, "pubmed_id", None),
+            "authors": getattr(self, "authors", None),
+            "title": getattr(self, "title", None),
+            "journal": getattr(self, "journal", None),
+            "doi": getattr(self, "doi", None),
         }

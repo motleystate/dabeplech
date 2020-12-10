@@ -22,9 +22,8 @@ class HALAPI(BaseAPI, GETMixin):
         :param hal_id: the HAL ID of adocument
         :return: response from HAL API
         """
-        full_url = urljoin(self.url, f'hal?q=docid:{hal_id}&fl=*&wt=json')
+        full_url = urljoin(self.url, f"hal?q=docid:{hal_id}&fl=*&wt=json")
         response = self.session.get(full_url)
         self.last_url_requested = full_url
         response.raise_for_status()
         return response.json()
-

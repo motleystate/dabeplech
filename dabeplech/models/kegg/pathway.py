@@ -7,7 +7,7 @@ from .base import BaseKeggListModel, BaseKeggWithRefModel
 
 
 class KeggPathwayModel(BaseKeggWithRefModel):
-    entry_id: str = Field(regex=r'^(map|ko)\d{5}$')
+    entry_id: str = Field(regex=r"^(map|ko)\d{5}$")
     description: str = None
     classes: List[str] = None
     modules: dict = None
@@ -15,7 +15,7 @@ class KeggPathwayModel(BaseKeggWithRefModel):
     orthologies: dict = None
     compounds: dict = None
     related_pathways: dict = None
-    ko_pathway: str = Field(None, regex=r'^ko\d{5}$')
+    ko_pathway: str = Field(None, regex=r"^ko\d{5}$")
     dblinks: DBLinksModel = None
     diseases: dict = None
 

@@ -11,4 +11,5 @@ class KeggModuleParser(BaseKeggParser):
     """
     Parser for KEGG module `plain text` result from KEGG API.
     """
+
     model = KeggModuleModel

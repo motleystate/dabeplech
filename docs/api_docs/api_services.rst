@@ -5,6 +5,13 @@ API Services
 KEGG
 ====
 
+.. currentmodule:: dabeplech.kegg
+
+.. autosummary::
+    :toctree: stubs
+
+    KEGGAPI
+
 .. automodule:: dabeplech.kegg
     :members:
     :undoc-members:

@@ -6,46 +6,44 @@ from .base import BaseAPI, GETMixin
 
 
 class TogoWSAPI(BaseAPI, GETMixin):
-    BASE_URL = 'http://togows.org'
+    BASE_URL = "http://togows.org"
 
 
 class TogoWSEntryAPI(TogoWSAPI):
-    TYPE = 'entry'
+    TYPE = "entry"
     DATABASES = [
-        'ncbi-nuccore',
-        'ncbi-nucest',
-        'ncbi-nucgss',
-        'ncbi-nucleotide',
-        'ncbi-protein',
-        'ncbi-gene',
-        'ncbi-homologene',
-        'ncbi-snp',
-        'ncbi-mesh',
-        'ncbi-pubmed',
-        'ebi-ena',
-        'ebi-uniprot',
-        'ebi-uniparc',
-        'ebi-uniref100',
-        'ebi-uniref90',
-        'ebi-uniref50',
-        'ddbj-ddbj',
-        'ddbj-dad',
-        'pdbj-pdb',
-        'kegg-compound',
-        'kegg-drug',
-        'kegg-enzyme',
-        'kegg-genes',
-        'kegg-glycan',
-        'kegg-orthology',
-        'kegg-reaction',
-        'kegg-module',
-        'kegg-pathway'
+        "ncbi-nuccore",
+        "ncbi-nucest",
+        "ncbi-nucgss",
+        "ncbi-nucleotide",
+        "ncbi-protein",
+        "ncbi-gene",
+        "ncbi-homologene",
+        "ncbi-snp",
+        "ncbi-mesh",
+        "ncbi-pubmed",
+        "ebi-ena",
+        "ebi-uniprot",
+        "ebi-uniparc",
+        "ebi-uniref100",
+        "ebi-uniref90",
+        "ebi-uniref50",
+        "ddbj-ddbj",
+        "ddbj-dad",
+        "pdbj-pdb",
+        "kegg-compound",
+        "kegg-drug",
+        "kegg-enzyme",
+        "kegg-genes",
+        "kegg-glycan",
+        "kegg-orthology",
+        "kegg-reaction",
+        "kegg-module",
+        "kegg-pathway",
     ]
-    FORMATS = [
-        "json", "fasta", "gff", "ttl", "xml"
-    ]
+    FORMATS = ["json", "fasta", "gff", "ttl", "xml"]
 
-    def __init__(self, database: str, entry_format: str = 'json'):
+    def __init__(self, database: str, entry_format: str = "json"):
         """
         :param database: selected target database (list in self.DATABASES)
         :param entry_format: format for the response
