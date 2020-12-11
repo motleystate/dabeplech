@@ -8,6 +8,15 @@ Changelogs
 
 Summary of developments of dabeplech library.
 
+v0.5
+====
+
+v0.5.0
+------
+
+* Update docs and docstring format (pydocstyle and black)
+* Reformat and changes import path models and scrappers
+
 v0.4
 ====
 
