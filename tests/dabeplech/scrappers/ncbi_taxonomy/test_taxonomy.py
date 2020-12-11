@@ -1,7 +1,7 @@
 import os
 from unittest import TestCase
 
-from dabeplech.scrappers.ncbi_taxonomy.taxonomy import NCBITaxonomyScrapper
+from dabeplech.scrappers.ncbi_taxonomy import NCBITaxonomyScrapper
 
 
 class TestNCBITaxonomyScrapper(TestCase):

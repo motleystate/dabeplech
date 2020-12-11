@@ -8,6 +8,5 @@ __pycache__/
 notebooks/
 
 # Sphinx documentation
-_build/
-_static/
-_tempates/
+docs/_build/
+docs/*/stubs

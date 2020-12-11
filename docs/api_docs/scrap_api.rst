@@ -11,3 +11,10 @@ NCBI taxonomy
     :members:
     :undoc-members:
     :special-members: __init__
+
+.. currentmodule:: dabeplech.ncbi_taxonomy
+
+.. autosummary::
+    :toctree: stubs
+
+    NCBITaxonomyScrapAPI

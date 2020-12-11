@@ -2,7 +2,7 @@ from typing import Union
 
 import requests
 
-from dabeplech.scrappers.ncbi_taxonomy.taxonomy import NCBITaxonomyScrapper
+from dabeplech.scrappers.ncbi_taxonomy import NCBITaxonomyScrapper
 
 
 class NCBITaxonomyScrapAPI:
