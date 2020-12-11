@@ -1,15 +1,20 @@
+"""Base class and Mixins to build your API connectors."""
 from urllib.parse import urljoin
+from typing import Union
 
 import requests
 
 
 class BaseAPI:
+    """Base class to build your API connector."""
+
     BASE_URL = ""
     ROUTE = ""
     HEADERS = {"Content-type": "application/json", "Accept": "*/*"}
     SESSION = requests.Session
 
     def __init__(self):
+        """Instantiate your API connector."""
         if not getattr(self, "base_url", None):
             self.base_url = self.BASE_URL
         if not getattr(self, "route", None):
@@ -21,15 +26,14 @@ class BaseAPI:
 
 
 class LISTMixin:
-    """
-    Corresponds to a ``GET`` that retrieve all items
-    """
+    """Corresponds to a ``GET`` that retrieve list of items."""
 
-    def list(self, params: dict = None):
+    def list(self, params: dict = None) -> list:
         """
-        Perform GET request to the service
+        Perform GET request to the service.
 
-        :param params: query params for the request
+        Args:
+            params: query params for the request
         """
         response = self.session.get(self.url, params=params)
         self.last_url_requested = self.url
@@ -38,16 +42,15 @@ class LISTMixin:
 
 
 class GETMixin:
-    """
-    Corresponds to a ``GET`` that retrieve one item from its ID
-    """
+    """Corresponds to a ``GET`` that retrieve one item from its ID."""
 
-    def get(self, entry_id: str, params: dict = None):
+    def get(self, entry_id: str, params: dict = None) -> dict:
         """
-        Perform GET request to the service
+        Perform GET request to the service.
 
-        :param entry_id: ID of the entry you want to retrieve
-        :param params: query params for the request
+        Args:
+            entry_id: ID of the entry you want to retrieve
+            params: query params for the request
         """
         full_url = urljoin(self.url, entry_id)
         response = self.session.get(full_url, params=params)
@@ -57,11 +60,14 @@ class GETMixin:
 
 
 class POSTMixin:
-    def post(self, data: dict):
-        """
-        Perform POST request to the service
+    """Corresponds to a ``POST`` operation."""
 
-        :param data: data to send in the body of your POST
+    def post(self, data: dict) -> dict:
+        """
+        Perform POST request to the service.
+
+        Args
+            data: data to send in the body of your POST
         """
         response = self.session.post(f"{self.url}", json=data)
         self.last_url_requested = self.url
@@ -70,12 +76,15 @@ class POSTMixin:
 
 
 class PUTMixin:
-    def put(self, data: dict, entry_id: str = None):
-        """
-        Perform PUT request to the service
+    """Corresponds to a ``PUT`` operation."""
 
-        :param data: data to send in the body of your PUT
-        :param entry_id: ID of the entry you want to update
+    def put(self, data: dict, entry_id: str = None) -> Union[dict, list]:
+        """
+        Perform PUT request to the service.
+
+        Args:
+            data: data to send in the body of your PUT
+            entry_id: ID of the entry you want to update
         """
         if entry_id:
             full_url = urljoin(self.url, entry_id + "/")

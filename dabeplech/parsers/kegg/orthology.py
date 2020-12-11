@@ -1,3 +1,4 @@
+"""Parsers for KEGG orthologies."""
 import logging
 
 from dabeplech.models.kegg import KeggOrthologyModel
@@ -8,9 +9,7 @@ logger = logging.getLogger()
 
 
 class KeggOrthologyParser(BaseKeggParser):
-    """
-    Parser for KEGG KO `plain text` result from KEGG API.
-    """
+    """Parser for KEGG KO `plain text` result from KEGG API."""
 
     model = KeggOrthologyModel
 

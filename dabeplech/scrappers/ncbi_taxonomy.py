@@ -1,7 +1,7 @@
 """Scrappers for NCBI Taxonomy."""
 from bs4 import BeautifulSoup
 
-from dabeplech.models.ncbi_taxonomy.taxonomy import NCBITaxonomyAPIModel
+from dabeplech.models.ncbi_taxonomy import NCBITaxonomyAPIModel
 
 
 class NCBITaxonomyScrapper:

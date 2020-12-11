@@ -1,6 +1,7 @@
+"""Base with abstract classes for all KEGG parsers."""
 import logging
 
-from dabeplech.models.kegg.base import BaseKeggModel
+from dabeplech.models.kegg import BaseKeggModel
 from dabeplech.parsers.base import BaseParser
 from dabeplech.parsers.kegg.reference import KeggReferenceParser
 
@@ -9,15 +10,16 @@ logger = logging.getLogger()
 
 
 class BaseKeggParser(BaseParser):
-    """
-    Base structure for parsers for KEGG API
-    """
+    """Base structure for parsers for KEGG API."""
 
     model = BaseKeggModel  # Pydantic model to describe the response
 
     def __init__(self, content_response: str):
         """
-        :param content_response: content response from the API
+        Instantiate your parser on the KEGG response.
+
+        Args:
+            content_response: content response from the API
         """
         self.lines = content_response.rstrip().split("\n")
         self.handler = "_handle_entry"
@@ -149,15 +151,15 @@ class BaseKeggParser(BaseParser):
 
     def _reattach_last_elements(self):
         """
-        This aims to deal with last elements (like in references) that are not appended to their list
+        Deal with last elements that are not appended to their list.
+
+        e.g. in references
         """
         if self.current_ref is not None:
             self.entry.references.append(self.current_ref.dict())
 
     def parse(self):
-        """
-        Perform parsing of the text content into the model defined for KEGG orthology.
-        """
+        """Perform parsing of the text content into the model defined for KEGG orthology."""
         for line in self.lines:
             if "///" in line:  # end of lines
                 break
@@ -172,8 +174,10 @@ class BaseKeggParser(BaseParser):
     @property
     def validated_entry(self):
         """
-        :return: Validated entry for KEGG orthology.
-        :rtype: dict
+        Retrieve KEGG entry validated with the model.
+
+        Returns:
+            Validated entry for KEGG orthology.
         """
         # Reparse all the content of entry to make sure it respects the expected structure
         if self.skipped_lines > 0:

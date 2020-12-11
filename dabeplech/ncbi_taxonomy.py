@@ -1,3 +1,4 @@
+"""API like service for NCBI taxonomy."""
 from typing import Union
 
 import requests
@@ -7,14 +8,17 @@ from dabeplech.scrappers.ncbi_taxonomy import NCBITaxonomyScrapper
 
 class NCBITaxonomyScrapAPI:
     """
-    Scrap NCBI taxonomy pages to return information and mimic API behaviour to retrieve useful
-    information such as hierarchy of taxonomy.
+    Scrap NCBI taxonomy pages to return information and mimic API behaviour.
+
+    It retrieves useful information such as hierarchy of taxonomy.
     """
 
     HEADERS = {"Content-type": "text/html", "Accept": "*/*"}
     SESSION = requests.Session
+    BASE_URL = "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser"
 
     def __init__(self):
+        """Instantiate NCBI API like service."""
         self.last_url_requested = None
         self.session = self.SESSION()
         self.session.headers.update(self.HEADERS)
@@ -23,10 +27,13 @@ class NCBITaxonomyScrapAPI:
         self, tax_id: int, get_model: bool = True
     ) -> Union[NCBITaxonomyScrapper.model, dict]:
         """
-        :param tax_id: NCBI taxonomy ID to retrieve data from
-        :param get_model: return pydantic model (return dict if False)
+        Perform GET like operation.
+
+        Args:
+            tax_id: NCBI taxonomy ID to retrieve data from
+            get_model: return pydantic model (return dict if False)
         """
-        full_url = f"https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id={tax_id}&mode=info"
+        full_url = f"{self.BASE_URL}/wwwtax.cgi?id={tax_id}&mode=info"
         response = self.session.get(full_url)
         self.last_url_requested = full_url
         response.raise_for_status()

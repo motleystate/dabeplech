@@ -1,4 +1,7 @@
+"""Parsers for references items in KEGG responses."""
 import logging
+
+from dabeplech.models.kegg import KeggReferenceModel
 
 logging.basicConfig()
 logger = logging.getLogger()
@@ -6,7 +9,7 @@ logger = logging.getLogger()
 
 class KeggReferenceParser:
     """
-    Simple class that handle parsing of the REFERENCE part from KEGG API
+    Simple class that handle parsing of the REFERENCE part from KEGG API.
 
     It is build with the idea of setter handling each line directly
 
@@ -18,16 +21,15 @@ class KeggReferenceParser:
     ```
     """
 
+    model = KeggReferenceModel
+
     @property
     def pubmed_id(self):
+        """Get pubmed ID for this reference."""
         return self._pubmed_id
 
     @pubmed_id.setter
     def pubmed_id(self, line: str):
-        """
-        :param line: corresponding line
-        :type line: STR
-        """
         if "PMID" not in line:
             logger.warning("no PMID for the reference. Corresponding line: %s", line)
             self._pubmed_id = None
@@ -36,6 +38,7 @@ class KeggReferenceParser:
 
     @property
     def authors(self):
+        """Get authors for this reference."""
         return self._authors
 
     @authors.setter
@@ -45,6 +48,7 @@ class KeggReferenceParser:
 
     @property
     def title(self):
+        """Get title for this reference."""
         return self._title
 
     @title.setter
@@ -53,6 +57,7 @@ class KeggReferenceParser:
 
     @property
     def journal(self):
+        """Get journal for this reference."""
         return self._journal
 
     @journal.setter
@@ -61,17 +66,21 @@ class KeggReferenceParser:
 
     @property
     def doi(self):
+        """Get DOI for this reference."""
         return self._doi
 
     @doi.setter
     def doi(self, line):
         self._doi = line.split("DOI:", maxsplit=1)[-1]
 
-    def dict(self):
-        return {
-            "pubmed_id": getattr(self, "pubmed_id", None),
-            "authors": getattr(self, "authors", None),
-            "title": getattr(self, "title", None),
-            "journal": getattr(self, "journal", None),
-            "doi": getattr(self, "doi", None),
-        }
+    def dict(self) -> dict:
+        """Get reference as a dict."""
+        return self.model(
+            **{
+                "pubmed_id": getattr(self, "pubmed_id", None),
+                "authors": getattr(self, "authors", None),
+                "title": getattr(self, "title", None),
+                "journal": getattr(self, "journal", None),
+                "doi": getattr(self, "doi", None),
+            }
+        ).dict()

@@ -69,6 +69,7 @@ Example
 
     api_docs/api_services
     api_docs/scrap_api
+    api_docs/parsers
     api_docs/scrappers
 
 .. toctree::
