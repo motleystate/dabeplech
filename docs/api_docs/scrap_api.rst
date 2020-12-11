@@ -7,7 +7,9 @@ Classes that behave like API connectors but go through some scrapping steps to r
 NCBI taxonomy
 =============
 
-.. automodule:: dabeplech.ncbi_taxonomy
-    :members:
-    :undoc-members:
-    :special-members: __init__
+.. currentmodule:: dabeplech.ncbi_taxonomy
+
+.. autosummary::
+    :toctree: stubs
+
+    NCBITaxonomyScrapAPI

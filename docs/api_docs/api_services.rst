@@ -5,64 +5,78 @@ API Services
 KEGG
 ====
 
-.. automodule:: dabeplech.kegg
-    :members:
-    :undoc-members:
-    :special-members: __init__
-    :show-inheritance:
+.. currentmodule:: dabeplech.kegg
 
+.. autosummary::
+    :toctree: stubs
+
+    KEGGAPI
 
 TogoWS
 ======
 
-.. automodule:: dabeplech.togows
-    :members:
-    :undoc-members:
-    :special-members: __init__
-    :show-inheritance:
+.. currentmodule:: dabeplech.togows
+
+.. autosummary::
+    :toctree: stubs
+
+    TogoWSAPI
+    TogoWSEntryAPI
 
 PDBe
 ====
 
-.. autoclass:: dabeplech.pdbe.PDBeAPI
-    :members:
-    :undoc-members:
-    :show-inheritance:
-    :inherited-members: get
+.. currentmodule:: dabeplech.pdbe
 
-.. autoclass:: dabeplech.pdbe.PDBeUniprotMappingAPI
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. autosummary::
+    :toctree: stubs
 
-.. autoclass:: dabeplech.pdbe.PDBePFAMMappingAPI
-    :members:
-    :undoc-members:
-    :show-inheritance:
+    PDBeAPI
+    PDBeUniprotMappingAPI
+    PDBePFAMMappingAPI
 
 DOI
 ===
 
-.. autoclass:: dabeplech.doi.DOIAPI
-    :members:
-    :undoc-members:
-    :show-inheritance:
-    :inherited-members: get
+.. currentmodule:: dabeplech.doi
+
+.. autosummary::
+    :toctree: stubs
+
+    DOIAPI
 
 HAL
 ===
 
-.. autoclass:: dabeplech.hal.HALAPI
-    :members:
-    :undoc-members:
-    :show-inheritance:
-    :inherited-members: get
+.. currentmodule:: dabeplech.hal
+
+.. autosummary::
+    :toctree: stubs
+
+    HALAPI
 
 OLS
 ===
 
-.. autoclass:: dabeplech.ols.OLSAPI
-    :members:
-    :undoc-members:
-    :show-inheritance:
-    :inherited-members: get
+.. currentmodule:: dabeplech.ols
+
+.. autosummary::
+    :toctree: stubs
+
+    OLSAPI
+
+Base
+====
+
+Base items to help you build your API connectors:
+
+.. currentmodule:: dabeplech.base
+
+.. autosummary::
+    :toctree: stubs
+
+    BaseAPI
+    LISTMixin
+    GETMixin
+    POSTMixin
+    PUTMixin

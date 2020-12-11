@@ -5,3 +5,6 @@ pylint
 jupyter
 ipython
 pip-tools
+black
+pydocstyle
+

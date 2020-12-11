@@ -9,7 +9,7 @@ from .metagenedb import (  # noqa
     MetageneDBCatalogGeneAPI,
     MetageneDBCatalogKeggOrthologyAPI,
     MetageneDBCatalogTaxonomyAPI,
-    MetageneDBCatalogFunctionAPI
+    MetageneDBCatalogFunctionAPI,
 )
 from .pdbe import (  # noqa
     PDBeAPI,
@@ -19,9 +19,9 @@ from .pdbe import (  # noqa
 from .doi import (  # noqa
     DOIAPI,
 )
-from .hal import (  #noqa
+from .hal import (  # noqa
     HALAPI,
 )
-from .ols import (  #noqa
+from .ols import (  # noqa
     OLSAPI,
 )

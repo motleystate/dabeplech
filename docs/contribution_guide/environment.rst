@@ -29,33 +29,40 @@ The list of tools that are only used during the development process of the libra
 
     pip install -r requirements-dev.txt
 
-Linting
-=======
+Quality and tests
+=================
 
-The dabeplech project uses Flake8_ in its continuous integration process to check the code style and structure.
+You can run all quality steps and unit tests locally using the ``run_local_quality_tests.sh`` script.
 
+Here is a detail of the different steps.
+
+Quality
+-------
+
+Code is formated using Black_. To run it:
+
+.. code-block:: bash
+
+    black dabeplech/
+
+Documentation style is checked using pydocstyle_. To run it:
+
+.. code-block:: bash
+
+    pydocstyle dabeplech/
+
+Finally linting is done with Flake8_. To run it:
+
+.. code-block:: bash
+
+    flake8 --max-complexity=10 --max-line-length=127 dabeplech/
+
+.. _Black: https://black.readthedocs.io/en/stable/
+.. _pydocstyle: http://www.pydocstyle.org/en/stable/
 .. _Flake8: https://flake8.pycqa.org/en/latest/
 
-You can reuse the commands at the root of the project in your environment to check the syntax and structure of your code.
-
-First, it stops the build if there are Python syntax errors or undefined names:
-
-.. code-block:: bash
-
-    flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-
-Then, exit-zero treats all errors as warnings and the maximum number of character per line is set to 127.
-
-.. code-block:: bash
-
-    flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-
-.. Note::
-
-    The two commands are suggested by Github actions while setting up some CI.
-
 Unit tests
-==========
+----------
 
 To run all the unit tests you can use the following command from the root of the project:
 

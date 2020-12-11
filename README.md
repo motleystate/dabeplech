@@ -31,6 +31,17 @@ print(kegg_entry.names)
 # OUTPUT: ['gabD']
 ```
 
+## Run all quality checks and tests locally
+
+You can run all quality checks and unit tests locally.
+
+> **Note**:
+  You can have a look at the content of the script to run each step independently.
+
+```bash
+bash run_local_quality_tests.sh
+```
+
 -----------------------------------------
 
 ### Test endpoints

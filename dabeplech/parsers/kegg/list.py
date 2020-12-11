@@ -1,7 +1,8 @@
+"""Parsers for lists from KEGG."""
 import logging
 
-from dabeplech.models.kegg.orthology import KeggOrthologyListModel
-from dabeplech.models.kegg.pathway import KeggPathwayListModel
+from dabeplech.models.kegg import KeggOrthologyListModel
+from dabeplech.models.kegg import KeggPathwayListModel
 from dabeplech.parsers.base import BaseListParser
 
 logging.basicConfig()
@@ -9,18 +10,20 @@ logger = logging.getLogger()
 
 
 class BaseKeggListParser(BaseListParser):
+    """Base class for list from KEGG."""
 
     def _parse_line(self, line):
         elements = line.split(maxsplit=1)
-        entry_id = elements[0].split(':')[1]
-        names = elements[1].split(';')[0].split(',')
+        entry_id = elements[0].split(":")[1]
+        names = elements[1].split(";")[0].split(",")
         names = [name.strip() for name in names]
         return {
-            'entry_id': entry_id,
-            'names': names,
+            "entry_id": entry_id,
+            "names": names,
         }
 
     def parse(self):
+        """Perform parsing of the ``content_response``."""
         for line in self.lines:
             if not line.strip():
                 continue
@@ -28,41 +31,40 @@ class BaseKeggListParser(BaseListParser):
 
 
 class KeggOrthologyListParser(BaseKeggListParser):
-    """
-    Parser for list of KEGG ko from KEGG API (http://rest.kegg.jp/list/ko).
-    """
+    """Parser for list of KEGG ko from KEGG API (http://rest.kegg.jp/list/ko)."""
+
     model = KeggOrthologyListModel
 
     def _parse_line(self, line):
         elements = line.split(maxsplit=1)
-        entry_id = elements[0].split(':')[1]
-        names = elements[1].split(';')[0].split(',')
+        entry_id = elements[0].split(":")[1]
+        names = elements[1].split(";")[0].split(",")
         names = [name.strip() for name in names]
-        if ';' in elements[1]:
-            definition = elements[1].split(';')[1].split('[')[0].strip()
+        if ";" in elements[1]:
+            definition = elements[1].split(";")[1].split("[")[0].strip()
         else:
             definition = None
-        if '[' in elements[1]:
-            ec_numbers = elements[1].split('[')[1].rstrip(']').replace('EC:', '').split()
+        if "[" in elements[1]:
+            ec_numbers = (
+                elements[1].split("[")[1].rstrip("]").replace("EC:", "").split()
+            )
         else:
             ec_numbers = None
         return {
-            'entry_id': entry_id,
-            'names': names,
-            'definition': definition,
-            'ec_numbers': ec_numbers
+            "entry_id": entry_id,
+            "names": names,
+            "definition": definition,
+            "ec_numbers": ec_numbers,
         }
 
 
 class KeggPathwayListParser(BaseKeggListParser):
-    """
-    Parser for list of KEGG pathways (map) from KEGG API (http://rest.kegg.jp/list/pathway).
-    """
+    """Parser for list of KEGG pathways (map) from KEGG API (http://rest.kegg.jp/list/pathway)."""
+
     model = KeggPathwayListModel
 
 
 class KeggModuleListParser(BaseKeggListParser):
-    """
-    Parser for list of KEGG modules (M) from KEGG API (http://rest.kegg.jp/list/module).
-    """
+    """Parser for list of KEGG modules (M) from KEGG API (http://rest.kegg.jp/list/module)."""
+
     model = KeggPathwayListModel

@@ -1,3 +1,4 @@
+"""API for TogoWS services."""
 from urllib.parse import urljoin
 
 from requests.exceptions import HTTPError
@@ -6,49 +7,54 @@ from .base import BaseAPI, GETMixin
 
 
 class TogoWSAPI(BaseAPI, GETMixin):
-    BASE_URL = 'http://togows.org'
+    """TogoWS API service (http://togows.org)."""
+
+    BASE_URL = "http://togows.org"
 
 
 class TogoWSEntryAPI(TogoWSAPI):
-    TYPE = 'entry'
-    DATABASES = [
-        'ncbi-nuccore',
-        'ncbi-nucest',
-        'ncbi-nucgss',
-        'ncbi-nucleotide',
-        'ncbi-protein',
-        'ncbi-gene',
-        'ncbi-homologene',
-        'ncbi-snp',
-        'ncbi-mesh',
-        'ncbi-pubmed',
-        'ebi-ena',
-        'ebi-uniprot',
-        'ebi-uniparc',
-        'ebi-uniref100',
-        'ebi-uniref90',
-        'ebi-uniref50',
-        'ddbj-ddbj',
-        'ddbj-dad',
-        'pdbj-pdb',
-        'kegg-compound',
-        'kegg-drug',
-        'kegg-enzyme',
-        'kegg-genes',
-        'kegg-glycan',
-        'kegg-orthology',
-        'kegg-reaction',
-        'kegg-module',
-        'kegg-pathway'
-    ]
-    FORMATS = [
-        "json", "fasta", "gff", "ttl", "xml"
-    ]
+    """TogoWS API service for entries."""
 
-    def __init__(self, database: str, entry_format: str = 'json'):
+    TYPE = "entry"
+    DATABASES = [
+        "ncbi-nuccore",
+        "ncbi-nucest",
+        "ncbi-nucgss",
+        "ncbi-nucleotide",
+        "ncbi-protein",
+        "ncbi-gene",
+        "ncbi-homologene",
+        "ncbi-snp",
+        "ncbi-mesh",
+        "ncbi-pubmed",
+        "ebi-ena",
+        "ebi-uniprot",
+        "ebi-uniparc",
+        "ebi-uniref100",
+        "ebi-uniref90",
+        "ebi-uniref50",
+        "ddbj-ddbj",
+        "ddbj-dad",
+        "pdbj-pdb",
+        "kegg-compound",
+        "kegg-drug",
+        "kegg-enzyme",
+        "kegg-genes",
+        "kegg-glycan",
+        "kegg-orthology",
+        "kegg-reaction",
+        "kegg-module",
+        "kegg-pathway",
+    ]
+    FORMATS = ["json", "fasta", "gff", "ttl", "xml"]
+
+    def __init__(self, database: str, entry_format: str = "json"):
         """
-        :param database: selected target database (list in self.DATABASES)
-        :param entry_format: format for the response
+        Instantiate by choosing db and format for your response.
+
+        Args:
+            database: selected target database (list in self.DATABASES)
+            entry_format: format for the response
         """
         super().__init__()
         if database not in self.DATABASES:
@@ -62,7 +68,10 @@ class TogoWSEntryAPI(TogoWSAPI):
 
     def get(self, entry_id: str):
         """
-        :param entry_id: ID to obtain from selected database
+        Perform GET operation for an entry.
+
+        Args:
+            entry_id: ID to obtain from selected database
         """
         content = super().get(f"{entry_id}.{self.format}")
         if not content:
@@ -71,7 +80,10 @@ class TogoWSEntryAPI(TogoWSAPI):
 
     def get_field(self, entry_id: str, field: str):
         """
-        :param entry_id: ID to obtain from selected database
-        :param field: specific field to select in the response
+        Perform GET field operation for an entry.
+
+        Args:
+            entry_id: ID to obtain from selected database
+            field: specific field to select in the response
         """
         return super().get(f"{entry_id}/{field}.{self.format}")

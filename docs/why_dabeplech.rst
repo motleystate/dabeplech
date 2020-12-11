@@ -2,9 +2,9 @@
 
 .. _why_dabeplech:
 
-***********
+**************
 Why dabeplech?
-***********
+**************
 
 The main motivation behind dabeplech is to provide a simple way to query bioinformatics API.
 
