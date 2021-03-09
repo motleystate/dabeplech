@@ -6,7 +6,7 @@ authors = ["Kenzo-Hugo Hillion <hillion.kenzo@posteo.net>"]
 license = "MIT License"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 pydantic = "^1.8.1"
 requests = "^2.25.1"
 beautifulsoup4 = "^4.9.3"
