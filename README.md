@@ -16,6 +16,8 @@ List of supported services is listed in the [documentation](https://dabeplech.re
 
 ## Install
 
+Latest published version:
+
 ```python
 pip install dabeplech
 ```
@@ -31,17 +33,6 @@ print(kegg_entry.names)
 # OUTPUT: ['gabD']
 ```
 
-## Run all quality checks and tests locally
-
-You can run all quality checks and unit tests locally.
-
-> **Note**:
-  You can have a look at the content of the script to run each step independently.
-
-```bash
-bash run_local_quality_tests.sh
-```
-
 -----------------------------------------
 
 ### Test endpoints
@@ -49,6 +40,31 @@ bash run_local_quality_tests.sh
 Status of different endpoints can be test with `api_status.py` script from `tests` directory.
 
 If the test works, you will get some green output. Do not be surprised if you get `ERROR` in green, it means it is expected.
+
+-----------------------------------------
+
+# Development
+
+Packaging and organization of the library is done using [Poetry](https://python-poetry.org/docs/).
+
+In brief after [installing](https://python-poetry.org/docs/#installation) poetry, from the repository
+directory, just run:
+
+```bash
+poetry install
+```
+
+## Run all quality checks and tests locally
+
+You can run all quality checks and unit tests locally.
+
+To list all available commands:
+
+```bash
+poetry run inv --list
+# for instance
+poetry run inv quality.all  # Run all quality tests
+```
 
 -----------------------------------------
 

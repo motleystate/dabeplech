@@ -6,35 +6,27 @@ Development environment
 
 This page contains some guidelines to set up your environment to contribute to the project.
 
-Virtual environment with ``venv``
-=================================
+Install package for development
+===============================
+
+Packaging and organization of the library is done using Poetry_
+
+.. _Poetry: https://python-poetry.org/docs/
 
 .. code-block:: bash
 
-    python3 -m venv dabeplech_env
-    source ./dabeplech_env/bin/activate
+    poetry install
 
-This creates a directory ``./dabeplech_env/`` with the Python binaries you used. You can now use the independant environment
-to install the project and packages.
-
-.. Note::
-    Once activated, you can check it worked using ``which pip`` commands for instance.
-
-Install development dependencies
-================================
-
-The list of tools that are only used during the development process of the library are listed in ``requirements-dev.txt`` file.
-
-.. code-block:: bash
-
-    pip install -r requirements-dev.txt
+This will install both dependencies needed for the library and for the development of the library.
 
 Quality and tests
 =================
 
-You can run all quality steps and unit tests locally using the ``run_local_quality_tests.sh`` script.
+Quality and tests can be run using tasks. To obtain the full list:
 
-Here is a detail of the different steps.
+.. code-block:: bash
+
+    poetry run inv --list
 
 Quality
 -------
@@ -43,19 +35,19 @@ Code is formated using Black_. To run it:
 
 .. code-block:: bash
 
-    black dabeplech/
+    poetry run inv quality.black-format
 
 Documentation style is checked using pydocstyle_. To run it:
 
 .. code-block:: bash
 
-    pydocstyle dabeplech/
+    poetry run inv quality.docstyle
 
 Finally linting is done with Flake8_. To run it:
 
 .. code-block:: bash
 
-    flake8 --max-complexity=10 --max-line-length=127 dabeplech/
+poetry run inv quality.lint
 
 .. _Black: https://black.readthedocs.io/en/stable/
 .. _pydocstyle: http://www.pydocstyle.org/en/stable/
@@ -68,7 +60,7 @@ To run all the unit tests you can use the following command from the root of the
 
 .. code-block:: bash
 
-    pytest -s -v
+    poetry run inv tests.unit
 
 .. Note::
 
@@ -78,7 +70,7 @@ You can also only run selected tests by specifying the name of the test file:
 
 .. code-block:: bash
 
-    pytest -s -v tests/dabeplech/parsers/
+    poetry run pytest -s -v tests/dabeplech/parsers/
 
 .. Note::
 

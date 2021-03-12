@@ -23,3 +23,9 @@ def docstyle(c):
 def lint(c):
     """Run flake8."""
     c.run("flake8 dabeplech/")
+
+
+@task(black_format, docstyle, lint)
+def all(c):
+    """Run all quality tests."""
+    pass
