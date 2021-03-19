@@ -49,6 +49,7 @@ Example
     user_guide/basic_usage
     user_guide/supported_api
     user_guide/scrapped_pages
+    user_guide/tips
 
 .. toctree::
     :caption: Contribution guide
