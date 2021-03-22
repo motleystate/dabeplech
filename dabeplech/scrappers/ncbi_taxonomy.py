@@ -40,7 +40,7 @@ class NCBITaxonomyScrapper:
         """Retrieve taxonomy item of interest from the page."""
         table_of_interest = self.soup_info.body.find_all("table")[3]
         page_title = self.soup_info.find_all("title")[0].text
-        name = page_title[page_title.find("(") + 1 : page_title.find(")")]
+        name = page_title[page_title.find("(") + 1 : page_title.find(")")]  # noqa
         tax_id = table_of_interest.tr.td.text.split("Taxonomy ID:", maxsplit=1)[
             -1
         ].split()[0]
