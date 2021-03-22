@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dabeplech"
-version = "0.5.0"
+version = "0.6.0"
 description = "Light library to perform request to different bioinformatics APIs"
 authors = ["Kenzo-Hugo Hillion <hillion.kenzo@posteo.net>"]
 license = "MIT License"
