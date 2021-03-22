@@ -9,14 +9,14 @@ class NCBITaxonomyScrapper:
 
     model = NCBITaxonomyAPIModel
 
-    def __init__(self, html_content: bytes):
+    def __init__(self, html_content_info: bytes):
         """
         Instantiate your scrapper directly on html page content.
 
         Args:
-            html_content: HTML content of retrieved page
+            html_content_info: HTML content of retrieved page
         """
-        self.soup = BeautifulSoup(html_content, features="html.parser")
+        self.soup_info = BeautifulSoup(html_content_info, features="html.parser")
 
     def result_found(self):
         """
@@ -24,7 +24,7 @@ class NCBITaxonomyScrapper:
 
         If <h1> is present in the page, it means an error message is returned.
         """
-        if self.soup.h1 is not None:
+        if self.soup_info.h1 is not None:
             return False
         return True
 
@@ -38,8 +38,9 @@ class NCBITaxonomyScrapper:
 
     def retrieve_current_item(self):
         """Retrieve taxonomy item of interest from the page."""
-        table_of_interest = self.soup.body.find_all("table")[3]
-        name = table_of_interest.find_all("strong")[0].text
+        table_of_interest = self.soup_info.body.find_all("table")[3]
+        page_title = self.soup_info.find_all("title")[0].text
+        name = page_title[page_title.find("(") + 1 : page_title.find(")")]
         tax_id = table_of_interest.tr.td.text.split("Taxonomy ID:", maxsplit=1)[
             -1
         ].split()[0]
@@ -50,7 +51,7 @@ class NCBITaxonomyScrapper:
     def retrieve_hierarchy(self):
         """Retrieve taxonomy hierarchy from the page."""
         hierarchy = []
-        for i in self.soup.dd.find_all("a"):
+        for i in self.soup_info.dd.find_all("a"):
             hierarchy.append(
                 {
                     "rank": i["title"],
