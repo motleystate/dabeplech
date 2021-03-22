@@ -63,7 +63,8 @@ OLS
 .. autosummary::
     :toctree: stubs
 
-    OLSAPI
+    OLSGOAPI
+    OLSNCBITaxonomyAPI
 
 Base
 ====

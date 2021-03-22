@@ -1,7 +1,6 @@
 from .version import __version__  # noqa
 
 from .kegg import KEGGAPI  # noqa
-from .ncbi_taxonomy import NCBITaxonomyScrapAPI  # noqa
 from .togows import TogoWSEntryAPI  # noqa
 from .metagenedb import (  # noqa
     MetageneDBTokenAPI,
@@ -22,6 +21,4 @@ from .doi import (  # noqa
 from .hal import (  # noqa
     HALAPI,
 )
-from .ols import (  # noqa
-    OLSAPI,
-)
+from .ols import OLSGOAPI, OLSNCBITaxonomyAPI  # noqa
