@@ -3,6 +3,7 @@
 ![Python package](https://github.com/motleystate/dabeplech/workflows/Python%20package/badge.svg)
 [![codecov](https://codecov.io/gh/motleystate/dabeplech/branch/master/graph/badge.svg)](https://codecov.io/gh/motleystate/dabeplech)
 [![Documentation Status](https://readthedocs.org/projects/dabeplech/badge/?version=latest)](https://dabeplech.readthedocs.io/en/latest/?badge=latest)
+[![Downloads](https://pepy.tech/badge/dabeplech)](https://pepy.tech/project/dabeplech)
 
 Light library to perform requests to different bioinformatics APIs.
 This library also contains models description (thanks to [pydantic](https://github.com/samuelcolvin/pydantic/)). It allows automatic
